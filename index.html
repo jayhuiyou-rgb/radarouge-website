@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RADA ROUGE Lighting Design Consultant</title>
-  <meta name="description" content="A cinematic portfolio website draft for a professional lighting designer and production lighting consultant.">
+  <meta name="description" content="RADA ROUGE is an architectural lighting design consultancy shaping hospitality, residential, commercial, facade and landscape environments through light and shadow.">
   <style>
     :root {
       color-scheme: dark;
-      --bg: #080808;
-      --panel: #111111;
-      --panel-soft: #171717;
-      --text: #f4f0e8;
-      --muted: #b8b0a3;
-      --line: rgba(244, 240, 232, 0.16);
-      --gold: #d7b56d;
-      --ember: #c94b25;
-      --steel: #94a3b8;
+      --bg: #080706;
+      --ink: #f6f0e8;
+      --muted: #b8afa4;
+      --quiet: rgba(246, 240, 232, 0.68);
+      --line: rgba(246, 240, 232, 0.16);
+      --panel: #12100e;
+      --panel-2: #191511;
+      --rouge: #8d2f2b;
+      --gold: #d6b16e;
+      --stone: #d8d0c4;
       --max: 1180px;
     }
 
@@ -31,7 +32,7 @@
     body {
       margin: 0;
       background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.55;
     }
@@ -52,31 +53,32 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 20;
-      border-bottom: 1px solid rgba(244, 240, 232, 0.12);
-      background: rgba(8, 8, 8, 0.78);
+      border-bottom: 1px solid rgba(246, 240, 232, 0.12);
+      background: rgba(8, 7, 6, 0.82);
       backdrop-filter: blur(18px);
     }
 
     .nav {
       width: min(var(--max), calc(100% - 36px));
-      height: 76px;
+      min-height: 76px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+      padding: 14px 0;
     }
 
     .brand {
       display: grid;
-      gap: 1px;
-      min-width: 190px;
+      gap: 2px;
+      min-width: 220px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .brand strong {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       font-weight: 700;
     }
 
@@ -92,8 +94,8 @@
       flex-wrap: wrap;
       gap: 18px;
       color: var(--muted);
-      font-size: 0.73rem;
-      letter-spacing: 0.09em;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
@@ -103,21 +105,21 @@
     }
 
     .nav-links a:hover {
-      color: var(--text);
+      color: var(--ink);
       border-color: var(--gold);
     }
 
     .hero {
       min-height: 96vh;
+      position: relative;
       display: grid;
       align-items: end;
-      position: relative;
-      isolation: isolate;
       overflow: hidden;
+      isolation: isolate;
       background:
-        linear-gradient(180deg, rgba(8, 8, 8, 0.1), rgba(8, 8, 8, 0.92)),
-        linear-gradient(90deg, rgba(8, 8, 8, 0.92), rgba(8, 8, 8, 0.26), rgba(8, 8, 8, 0.72)),
-        url("https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=2200&q=82") center / cover;
+        linear-gradient(180deg, rgba(8, 7, 6, 0.2), rgba(8, 7, 6, 0.9)),
+        linear-gradient(90deg, rgba(8, 7, 6, 0.96), rgba(8, 7, 6, 0.36), rgba(8, 7, 6, 0.78)),
+        url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=2200&q=82") center / cover;
     }
 
     .hero::after {
@@ -131,16 +133,17 @@
     .hero-inner {
       width: min(var(--max), calc(100% - 36px));
       margin: 0 auto;
-      padding: 136px 0 70px;
+      padding: 148px 0 62px;
       display: grid;
-      gap: 38px;
+      gap: 32px;
     }
 
     .kicker {
+      margin: 0;
       color: var(--gold);
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
@@ -152,16 +155,16 @@
     }
 
     h1 {
-      max-width: 850px;
+      max-width: 930px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 8.5vw, 7.8rem);
+      font-size: clamp(3.15rem, 8.2vw, 7.5rem);
       font-weight: 400;
-      line-height: 0.95;
+      line-height: 0.96;
     }
 
     .hero-copy {
-      max-width: 610px;
-      color: #e5ded2;
+      max-width: 670px;
+      color: #e7ded2;
       font-size: clamp(1.04rem, 1.8vw, 1.28rem);
     }
 
@@ -178,17 +181,56 @@
       justify-content: center;
       border: 1px solid var(--line);
       padding: 12px 18px;
-      color: var(--text);
-      background: rgba(244, 240, 232, 0.08);
+      color: var(--ink);
+      background: rgba(246, 240, 232, 0.08);
       font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
     }
 
     .button.primary {
-      border-color: rgba(215, 181, 109, 0.62);
-      background: rgba(215, 181, 109, 0.16);
+      border-color: rgba(214, 177, 110, 0.7);
+      background: rgba(214, 177, 110, 0.16);
+    }
+
+    .proof-strip {
+      width: min(var(--max), calc(100% - 36px));
+      margin: -44px auto 0;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      background: rgba(18, 16, 14, 0.96);
+    }
+
+    .proof {
+      min-height: 120px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      display: grid;
+      align-content: space-between;
+      gap: 18px;
+    }
+
+    .proof:last-child {
+      border-right: 0;
+    }
+
+    .proof strong {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--gold);
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .proof span {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .section {
@@ -203,7 +245,7 @@
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(180px, 0.35fr) minmax(0, 0.65fr);
+      grid-template-columns: minmax(180px, 0.34fr) minmax(0, 0.66fr);
       gap: 52px;
       align-items: start;
       margin-bottom: 44px;
@@ -219,27 +261,28 @@
     .section-copy {
       color: var(--muted);
       font-size: 1.02rem;
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.48fr);
+      grid-template-columns: minmax(0, 0.74fr) minmax(280px, 0.42fr);
       gap: 28px;
       align-items: stretch;
     }
 
-    .portrait {
-      min-height: 480px;
+    .about-image {
+      min-height: 500px;
       background:
-        linear-gradient(180deg, transparent, rgba(8, 8, 8, 0.44)),
-        url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1400&q=82") center / cover;
+        linear-gradient(180deg, transparent, rgba(8, 7, 6, 0.5)),
+        url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1500&q=82") center / cover;
+      border: 1px solid var(--line);
     }
 
     .statement {
       display: grid;
-      align-content: end;
-      gap: 28px;
+      align-content: space-between;
+      gap: 30px;
       padding: 34px;
       background: var(--panel);
       border: 1px solid var(--line);
@@ -248,16 +291,16 @@
     .statement strong {
       color: var(--gold);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 2.2rem;
+      font-size: 2.15rem;
       font-weight: 400;
-      line-height: 1.08;
+      line-height: 1.1;
     }
 
     .statement p {
       color: var(--muted);
     }
 
-    .specialty-grid,
+    .principles,
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -266,38 +309,81 @@
       border: 1px solid var(--line);
     }
 
-    .specialty,
+    .principle,
     .service {
-      min-height: 220px;
+      min-height: 230px;
       display: grid;
       align-content: space-between;
-      gap: 28px;
+      gap: 30px;
       padding: 30px;
       background: var(--panel);
     }
 
-    .specialty span,
+    .principle span,
     .service span {
       color: var(--gold);
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
-    .specialty h3,
+    .principle h3,
     .service h3 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.7rem;
+      font-size: 1.72rem;
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.12;
     }
 
-    .specialty p,
+    .principle p,
     .service p,
     .project p,
     .listing p {
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .founder {
+      background:
+        linear-gradient(90deg, rgba(8, 7, 6, 0.97), rgba(8, 7, 6, 0.64)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=82") center / cover;
+    }
+
+    .founder-panel {
+      max-width: 780px;
+      padding: 40px;
+      background: rgba(18, 16, 14, 0.82);
+      border: 1px solid var(--line);
+    }
+
+    .founder-panel h2 {
+      margin: 10px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 4.8vw, 4.7rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .founder-panel p {
+      color: var(--stone);
+      margin-bottom: 18px;
+    }
+
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .credential {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      color: var(--quiet);
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .projects {
@@ -307,14 +393,14 @@
 
     .project {
       display: grid;
-      grid-template-columns: minmax(280px, 0.95fr) minmax(240px, 0.55fr);
-      min-height: 420px;
+      grid-template-columns: minmax(280px, 0.92fr) minmax(260px, 0.52fr);
+      min-height: 410px;
       border: 1px solid var(--line);
       background: var(--panel);
     }
 
     .project:nth-child(even) {
-      grid-template-columns: minmax(240px, 0.55fr) minmax(280px, 0.95fr);
+      grid-template-columns: minmax(260px, 0.52fr) minmax(280px, 0.92fr);
     }
 
     .project:nth-child(even) .project-image {
@@ -348,12 +434,6 @@
       line-height: 1;
     }
 
-    .band {
-      background:
-        linear-gradient(90deg, rgba(8, 8, 8, 0.94), rgba(8, 8, 8, 0.64)),
-        url("https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=2200&q=82") center / cover;
-    }
-
     .listings {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -366,10 +446,9 @@
       display: grid;
       gap: 12px;
       padding: 28px;
-      background: rgba(17, 17, 17, 0.9);
+      background: rgba(18, 16, 14, 0.95);
     }
 
-    .listing time,
     .listing span {
       color: var(--gold);
       font-size: 0.72rem;
@@ -403,7 +482,7 @@
       gap: 18px;
       padding: 30px;
       border: 1px solid var(--line);
-      background: var(--panel-soft);
+      background: var(--panel-2);
     }
 
     .contact-card a,
@@ -418,14 +497,12 @@
       display: flex;
       justify-content: space-between;
       gap: 18px;
-      color: rgba(244, 240, 232, 0.56);
+      color: rgba(246, 240, 232, 0.56);
       font-size: 0.78rem;
     }
 
     @media (max-width: 900px) {
       .nav {
-        height: auto;
-        padding: 16px 0;
         align-items: flex-start;
       }
 
@@ -435,10 +512,7 @@
         font-size: 0.66rem;
       }
 
-      .section {
-        padding: 70px 0;
-      }
-
+      .proof-strip,
       .section-head,
       .about-grid,
       .project,
@@ -447,11 +521,20 @@
         grid-template-columns: 1fr;
       }
 
+      .proof {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .proof:last-child {
+        border-bottom: 0;
+      }
+
       .project:nth-child(even) .project-image {
         order: initial;
       }
 
-      .specialty-grid,
+      .principles,
       .service-grid,
       .listings {
         grid-template-columns: 1fr;
@@ -470,24 +553,30 @@
 
       .hero-inner,
       .section-inner,
+      .proof-strip,
       .footer {
         width: min(var(--max), calc(100% - 24px));
       }
 
       .hero-inner {
-        padding-top: 170px;
+        padding-top: 184px;
       }
 
       h1 {
-        font-size: clamp(3rem, 17vw, 5.3rem);
+        font-size: clamp(3rem, 16vw, 5rem);
+      }
+
+      .section {
+        padding: 68px 0;
       }
 
       .statement,
       .project-body,
-      .specialty,
+      .principle,
       .service,
       .listing,
-      .contact-card {
+      .contact-card,
+      .founder-panel {
         padding: 24px;
       }
 
@@ -500,17 +589,16 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#welcome" aria-label="Lighting Design Portfolio home">
+      <a class="brand" href="#welcome" aria-label="RADA ROUGE home">
         <strong>RADA ROUGE</strong>
         <span>Lighting Design Consultant</span>
       </a>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#specialties">Specialties</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#awards">Awards</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#founder">Founder</a>
         <a href="#services">Services</a>
-        <a href="#press">Press</a>
+        <a href="#portfolio">Projects</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -519,61 +607,133 @@
   <main>
     <section class="hero" id="welcome">
       <div class="hero-inner">
-        <p class="kicker">Concerts · Theatre · Corporate Events · Touring</p>
-        <h1>Lighting that gives every stage a pulse.</h1>
-        <p class="hero-copy">A draft portfolio for a lighting designer working across live entertainment, stage productions and branded experiences. Real project photos and credits can be placed here later.</p>
+        <p class="kicker">Architectural Lighting Consultancy</p>
+        <h1>Light the way with heart and hue.</h1>
+        <p class="hero-copy">RADA ROUGE shapes architectural identity through the art and science of light, composing atmosphere for hospitality, luxury residential, commercial, facade and landscape environments across Asia.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#portfolio">View Portfolio</a>
-          <a class="button" href="#contact">Get In Touch</a>
+          <a class="button primary" href="#portfolio">View Selected Projects</a>
+          <a class="button" href="#services">Explore Services</a>
         </div>
       </div>
     </section>
+
+    <div class="proof-strip" aria-label="RADA ROUGE highlights">
+      <div class="proof">
+        <strong>11+</strong>
+        <span>Years of lighting design experience</span>
+      </div>
+      <div class="proof">
+        <strong>IALD</strong>
+        <span>Professional member background</span>
+      </div>
+      <div class="proof">
+        <strong>Asia</strong>
+        <span>Hong Kong, Malaysia, Singapore and beyond</span>
+      </div>
+      <div class="proof">
+        <strong>5</strong>
+        <span>Core sectors in architectural lighting</span>
+      </div>
+    </div>
 
     <section class="section" id="about">
       <div class="section-inner">
         <div class="section-head">
-          <p class="kicker">About</p>
+          <p class="kicker">About RADA ROUGE</p>
           <div>
-            <h2 class="section-title">A considered approach to atmosphere, rhythm and precision.</h2>
-            <p class="section-copy">This placeholder biography introduces the designer's background, artistic language and production experience. It can later be rewritten with real career highlights, collaborators, awards, and the kinds of shows you want to be known for.</p>
+            <h2 class="section-title">Transforming architecture through light, shadow and intention.</h2>
+            <p class="section-copy">RADA ROUGE Lighting Design Consultancy is dedicated to translating architectural vision into meaningful lighting experiences. The studio works closely with architects, interior designers and developers to create solutions that are visually compelling, technically refined and purpose-driven.</p>
           </div>
         </div>
         <div class="about-grid">
-          <div class="portrait" role="img" aria-label="Concert lighting and stage atmosphere"></div>
+          <div class="about-image" role="img" aria-label="Architectural interior shaped by warm lighting"></div>
           <div class="statement">
-            <strong>Light is not decoration. It is timing, emotion and architecture.</strong>
-            <p>From early concept to final cue, the studio develops lighting systems that support the artist, the audience and the technical realities of each venue.</p>
+            <strong>We fearlessly compose light and shadow.</strong>
+            <p>Every beam of light, every shadow and every subtle contrast is intentionally crafted to reveal spatial depth, enhance architectural form and create emotional resonance.</p>
+            <p>At RADA ROUGE, light is not simply illumination. It is a design language that brings architecture to life.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="specialties">
+    <section class="section" id="philosophy">
       <div class="section-inner">
         <div class="section-head">
-          <p class="kicker">Specialties</p>
-          <p class="section-copy">These categories can be adjusted to match your real work: concerts, artist showcases, theatre, broadcast, corporate events, installations, festivals, or touring systems.</p>
+          <p class="kicker">Design Philosophy</p>
+          <p class="section-copy">The studio believes exceptional lighting design is found in the balance between visibility and mystery, precision and artistry, technology and human experience.</p>
         </div>
-        <div class="specialty-grid">
-          <article class="specialty">
+        <div class="principles">
+          <article class="principle">
             <span>01</span>
             <div>
-              <h3>Concert Lighting</h3>
-              <p>Dynamic cueing, beam architecture and audience-scale visual energy for live music.</p>
+              <h3>Design Excellence</h3>
+              <p>Timeless, expressive and human-centred lighting design that elevates atmosphere and strengthens spatial identity.</p>
             </div>
           </article>
-          <article class="specialty">
+          <article class="principle">
             <span>02</span>
             <div>
-              <h3>Stage & Theatre</h3>
-              <p>Scene-focused lighting that supports story, blocking, texture and dramatic pacing.</p>
+              <h3>Technology Excellence</h3>
+              <p>Advanced lighting systems, smart controls and sustainable strategies are integrated to achieve refined performance.</p>
             </div>
           </article>
-          <article class="specialty">
+          <article class="principle">
             <span>03</span>
             <div>
-              <h3>Production Consulting</h3>
-              <p>Fixture planning, venue coordination, technical drawings and show programming support.</p>
+              <h3>Collaboration</h3>
+              <p>Ideas are refined with architects, designers and developers through trust, unity and precise coordination.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section founder" id="founder">
+      <div class="section-inner">
+        <div class="founder-panel">
+          <p class="kicker">Founder & Design Director</p>
+          <h2>Ada Wong</h2>
+          <p>Ada Wong is an architectural lighting designer with more than eleven years of experience across luxury hospitality, high-end residential, commercial and mixed-use developments.</p>
+          <p>Her background spans interior design, architectural engineering management and senior lighting design roles in internationally recognised studios. Her work is guided by a sensitivity to Asian aesthetics, global design language and the emotional power of light.</p>
+          <div class="credentials">
+            <span class="credential">Hong Kong born</span>
+            <span class="credential">IALD professional member</span>
+            <span class="credential">Hospitality lighting</span>
+            <span class="credential">Facade and landscape</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="kicker">Services</p>
+          <div>
+            <h2 class="section-title">From concept to commissioning.</h2>
+            <p class="section-copy">RADA ROUGE supports projects from early design vision through technical documentation, coordination, site supervision and final commissioning.</p>
+          </div>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <span>Concept</span>
+            <div>
+              <h3>Lighting Design Concept</h3>
+              <p>Lighting concept, mood board, facade strategy, architectural lighting direction and decorative lighting intent.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>Documentation</span>
+            <div>
+              <h3>Technical Drawing Package</h3>
+              <p>Lighting technical drawings, detail drawings, fitting specifications, custom light fitting design and installation details.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>Delivery</span>
+            <div>
+              <h3>Coordination & Commissioning</h3>
+              <p>Lighting control specifications, project coordination, on-site coordination, dimming scenes and final defect review.</p>
             </div>
           </article>
         </div>
@@ -583,132 +743,73 @@
     <section class="section" id="portfolio">
       <div class="section-inner">
         <div class="section-head">
-          <p class="kicker">Portfolio</p>
+          <p class="kicker">Selected Projects</p>
           <div>
-            <h2 class="section-title">Selected projects</h2>
-            <p class="section-copy">The project cards below are placeholders. Later we can replace each one with your real artist/company projects, photo galleries, location, year and credit details.</p>
+            <h2 class="section-title">Hospitality, residential, commercial and facade work.</h2>
+            <p class="section-copy">The full project archive can later become its own page. For the homepage, the selection below introduces the range of RADA ROUGE's current portfolio.</p>
           </div>
         </div>
         <div class="projects">
           <article class="project">
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1500&q=82" alt="Large concert stage with vivid lighting">
+              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1500&q=82" alt="Luxury interior with warm architectural lighting">
             </div>
             <div class="project-body">
-              <p class="project-meta">Arena Concert · 2026</p>
-              <h3>North Star Live</h3>
-              <p>Lighting direction for a large-scale concert with layered beams, warm audience washes and sharp visual punctuation for key musical moments.</p>
+              <p class="project-meta">Hong Kong | Residential</p>
+              <h3>Deep Water Bay No.8</h3>
+              <p>A concise and elegant lighting strategy using linear light, recessed fixtures and integrated details to create a minimal spatial experience where light is felt before the fixture is seen.</p>
             </div>
           </article>
           <article class="project">
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1500&q=82" alt="Festival crowd and stage lighting">
+              <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1500&q=82" alt="Refined restaurant interior lighting">
             </div>
             <div class="project-body">
-              <p class="project-meta">Festival Stage · 2025</p>
-              <h3>Afterglow Festival</h3>
-              <p>Visual system design for a high-energy festival stage, balancing artist visibility, camera capture and crowd-facing spectacle.</p>
+              <p class="project-meta">Hong Kong | Restaurant</p>
+              <h3>Sabatini IFC</h3>
+              <p>Layered indirect cove lighting, accent downlights, wall washers and dimming scenes support a romantic, adaptable fine dining atmosphere.</p>
             </div>
           </article>
           <article class="project">
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=1500&q=82" alt="Performance stage with theatrical lighting">
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1500&q=82" alt="Hotel interior with ambient architectural lighting">
             </div>
             <div class="project-body">
-              <p class="project-meta">Theatre Production · 2024</p>
-              <h3>Silent City</h3>
-              <p>A theatrical lighting palette using narrow focus, haze and low amber sources to create intimacy, distance and emotional contrast.</p>
+              <p class="project-meta">Singapore | Hospitality</p>
+              <h3>Wyndham Hotel Ballroom</h3>
+              <p>Ambient, accent and indirect lighting create a refined multifunctional venue that can shift between grand banquets, celebrations and event-focused scenes.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section band" id="awards">
+    <section class="section" id="sectors">
       <div class="section-inner">
         <div class="section-head">
-          <p class="kicker">Awards</p>
-          <div>
-            <h2 class="section-title">Recognition and selected milestones.</h2>
-            <p class="section-copy">This area can hold awards, nominations, major tours, theatre festivals, brand collaborations, press mentions or industry acknowledgements.</p>
-          </div>
+          <p class="kicker">Project Types</p>
+          <p class="section-copy">The project library from the company profile can later be arranged by sector, location and year.</p>
         </div>
         <div class="listings">
           <article class="listing">
-            <time>2026</time>
-            <h3>Best Live Visual Design</h3>
-            <p>Placeholder award entry for a concert, theatre or event lighting project.</p>
+            <span>Hospitality</span>
+            <h3>Hotels, clubhouses and restaurants</h3>
+            <p>Andaz Hotel, V Walk Clubhouse, XAVA Restaurants, Sabatini IFC and Wyndham Hotel Ballroom.</p>
           </article>
           <article class="listing">
-            <time>2025</time>
-            <h3>International Production Showcase</h3>
-            <p>Placeholder highlight for a featured project, tour, collaboration or festival program.</p>
+            <span>Residential</span>
+            <h3>Luxury homes and sales environments</h3>
+            <p>Deep Water Bay No.8, EDEN TAMAN DUTA and high-end residential interior, facade and landscape lighting.</p>
           </article>
           <article class="listing">
-            <time>2024</time>
-            <h3>Featured Lighting Designer</h3>
-            <p>Placeholder recognition from a media outlet, production body or creative institution.</p>
+            <span>Commercial</span>
+            <h3>Mixed-use and public-facing spaces</h3>
+            <p>Commercial interiors, outdoor sport centres, sales offices and development environments.</p>
           </article>
           <article class="listing">
-            <time>2023</time>
-            <h3>Creative Technical Direction</h3>
-            <p>Placeholder milestone for consulting, programming or system planning work.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="kicker">Services</p>
-          <p class="section-copy">A clear services section helps producers, artists and companies understand what they can contact you for.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service">
-            <span>Design</span>
-            <div>
-              <h3>Lighting Concept</h3>
-              <p>Creative direction, mood references, visual rhythm, fixture intent and show language.</p>
-            </div>
-          </article>
-          <article class="service">
-            <span>Planning</span>
-            <div>
-              <h3>Technical Package</h3>
-              <p>Venue planning, fixture lists, cue structure, production coordination and documentation.</p>
-            </div>
-          </article>
-          <article class="service">
-            <span>Show</span>
-            <div>
-              <h3>Programming & Operation</h3>
-              <p>Console programming, rehearsal support, show calling alignment and on-site execution.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="press">
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="kicker">Seminars · Publications · Press</p>
-          <div>
-            <h2 class="section-title">Knowledge, interviews and public work.</h2>
-            <p class="section-copy">If you later have interviews, talks, teaching, workshops or publications, we can expand this into separate pages like the reference site.</p>
-          </div>
-        </div>
-        <div class="listings">
-          <article class="listing">
-            <span>Lecture</span>
-            <h3>Designing Light for Live Music</h3>
-            <p>Placeholder seminar description for industry sharing, college talks or production workshops.</p>
-          </article>
-          <article class="listing">
-            <span>Press</span>
-            <h3>Behind the Scenes of a Touring Show</h3>
-            <p>Placeholder media feature about process, collaboration and technical decisions.</p>
+            <span>Facade & Landscape</span>
+            <h3>Nighttime identity and spatial guidance</h3>
+            <p>Architectural facade expression, landscape hierarchy, pathway comfort and glare-controlled outdoor lighting.</p>
           </article>
         </div>
       </div>
@@ -718,21 +819,21 @@
       <div class="section-inner contact">
         <div>
           <p class="kicker">Get In Touch</p>
-          <h2>Start a new production conversation.</h2>
+          <h2>Start a lighting design conversation.</h2>
         </div>
         <div class="contact-card">
-          <p>Available for concerts, tours, theatre, corporate events and creative production consulting.</p>
-          <a href="mailto:hello@example.com">hello@example.com</a>
+          <p>Available for architectural exterior lighting, hospitality environments, luxury residences, landscape lighting and mixed-use developments.</p>
+          <a href="mailto:hello@radarouge.com">hello@radarouge.com</a>
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="tel:+0000000000">+00 0000 0000</a>
+          <a href="https://radarouge.com/">radarouge.com</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© 2026 RADA ROUGE Lighting Design Consultant</span>
-    <span>Draft website for review · Replace with final legal/contact details before launch</span>
+    <span>Copyright 2026 RADA ROUGE Lighting Design Consultant</span>
+    <span>Light the way with heart and hue</span>
   </footer>
 </body>
 </html>
