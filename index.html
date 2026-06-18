@@ -119,7 +119,7 @@
       background:
         linear-gradient(180deg, rgba(8, 7, 6, 0.2), rgba(8, 7, 6, 0.9)),
         linear-gradient(90deg, rgba(8, 7, 6, 0.96), rgba(8, 7, 6, 0.36), rgba(8, 7, 6, 0.78)),
-        url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=2200&q=82") center / cover;
+        url("assets/hero.jpg") center / cover;
     }
 
     .hero::after {
@@ -275,7 +275,7 @@
       min-height: 500px;
       background:
         linear-gradient(180deg, transparent, rgba(8, 7, 6, 0.5)),
-        url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1500&q=82") center / cover;
+        url("assets/about.jpg") center / cover;
       border: 1px solid var(--line);
     }
 
@@ -347,11 +347,29 @@
     .founder {
       background:
         linear-gradient(90deg, rgba(8, 7, 6, 0.97), rgba(8, 7, 6, 0.64)),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=82") center / cover;
+        url("assets/project-discovery.jpg") center / cover;
+    }
+
+    .founder-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.38fr) minmax(0, 0.62fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .founder-photo {
+      min-height: 620px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .founder-photo img {
+      object-position: center top;
+      filter: contrast(1.02);
     }
 
     .founder-panel {
-      max-width: 780px;
       padding: 40px;
       background: rgba(18, 16, 14, 0.82);
       border: 1px solid var(--line);
@@ -389,6 +407,40 @@
     .projects {
       display: grid;
       gap: 18px;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: 240px 1fr;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      overflow: hidden;
+    }
+
+    .project-card-image {
+      overflow: hidden;
+      background: #050403;
+    }
+
+    .project-card-body {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      padding: 24px;
+    }
+
+    .project-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      line-height: 1.12;
     }
 
     .project {
@@ -534,9 +586,18 @@
         order: initial;
       }
 
+      .founder-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-photo {
+        min-height: 560px;
+      }
+
       .principles,
       .service-grid,
-      .listings {
+      .listings,
+      .project-gallery {
         grid-template-columns: 1fr;
       }
     }
@@ -580,6 +641,10 @@
         padding: 24px;
       }
 
+      .founder-photo {
+        min-height: 440px;
+      }
+
       .footer {
         display: grid;
       }
@@ -595,9 +660,10 @@
       </a>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#philosophy">Philosophy</a>
+        <a href="#mission">Mission</a>
         <a href="#founder">Founder</a>
         <a href="#services">Services</a>
+        <a href="#workflow">Workflow</a>
         <a href="#portfolio">Projects</a>
         <a href="#contact">Contact</a>
       </div>
@@ -609,7 +675,7 @@
       <div class="hero-inner">
         <p class="kicker">Architectural Lighting Consultancy</p>
         <h1>Light the way with heart and hue.</h1>
-        <p class="hero-copy">RADA ROUGE shapes architectural identity through the art and science of light, composing atmosphere for hospitality, luxury residential, commercial, facade and landscape environments across Asia.</p>
+        <p class="hero-copy">RADA ROUGE is an architectural lighting consultancy dedicated to transforming architecture through the art and science of light. Every beam, shadow and subtle contrast is intentionally crafted to enhance form, reveal spatial depth and create meaningful experiences.</p>
         <div class="hero-actions">
           <a class="button primary" href="#portfolio">View Selected Projects</a>
           <a class="button" href="#services">Explore Services</a>
@@ -641,47 +707,47 @@
         <div class="section-head">
           <p class="kicker">About RADA ROUGE</p>
           <div>
-            <h2 class="section-title">Transforming architecture through light, shadow and intention.</h2>
-            <p class="section-copy">RADA ROUGE Lighting Design Consultancy is dedicated to translating architectural vision into meaningful lighting experiences. The studio works closely with architects, interior designers and developers to create solutions that are visually compelling, technically refined and purpose-driven.</p>
+            <h2 class="section-title">We orchestrate light to bring architecture to life.</h2>
+            <p class="section-copy">RADA ROUGE Lighting Design Consultancy works with architects, interior designers and developers to translate visionary concepts into practical, measurable lighting solutions across architectural exterior lighting, hotel environments, luxury residences and large-scale mixed-use developments.</p>
           </div>
         </div>
         <div class="about-grid">
           <div class="about-image" role="img" aria-label="Architectural interior shaped by warm lighting"></div>
           <div class="statement">
             <strong>We fearlessly compose light and shadow.</strong>
-            <p>Every beam of light, every shadow and every subtle contrast is intentionally crafted to reveal spatial depth, enhance architectural form and create emotional resonance.</p>
-            <p>At RADA ROUGE, light is not simply illumination. It is a design language that brings architecture to life.</p>
+            <p>Lighting design is far more than illumination. It shapes perception, evokes emotion and defines the identity of a space.</p>
+            <p>By integrating artistic sensibility with engineering excellence, every design is made visually compelling, technically refined and purpose-driven.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="philosophy">
+    <section class="section" id="mission">
       <div class="section-inner">
         <div class="section-head">
-          <p class="kicker">Design Philosophy</p>
-          <p class="section-copy">The studio believes exceptional lighting design is found in the balance between visibility and mystery, precision and artistry, technology and human experience.</p>
+          <p class="kicker">Mission & Philosophy</p>
+          <p class="section-copy">RADA ROUGE sees light as a language of architecture. The studio harnesses the power of light with precision and purpose, transforming creative visions into intelligent, meaningful lighting experiences.</p>
         </div>
         <div class="principles">
           <article class="principle">
             <span>01</span>
             <div>
               <h3>Design Excellence</h3>
-              <p>Timeless, expressive and human-centred lighting design that elevates atmosphere and strengthens spatial identity.</p>
+              <p>Creating timeless, expressive and human-centred lighting designs that inspire, endure and strengthen spatial identity.</p>
             </div>
           </article>
           <article class="principle">
             <span>02</span>
             <div>
               <h3>Technology Excellence</h3>
-              <p>Advanced lighting systems, smart controls and sustainable strategies are integrated to achieve refined performance.</p>
+              <p>Integrating advanced lighting systems, smart controls and sustainable technologies to achieve optimal performance and efficiency.</p>
             </div>
           </article>
           <article class="principle">
             <span>03</span>
             <div>
               <h3>Collaboration</h3>
-              <p>Ideas are refined with architects, designers and developers through trust, unity and precise coordination.</p>
+              <p>Working closely with architects, designers and developers with unity and trust, refining ideas to achieve harmony and precision.</p>
             </div>
           </article>
         </div>
@@ -690,16 +756,22 @@
 
     <section class="section founder" id="founder">
       <div class="section-inner">
-        <div class="founder-panel">
-          <p class="kicker">Founder & Design Director</p>
-          <h2>Ada Wong</h2>
-          <p>Ada Wong is an architectural lighting designer with more than eleven years of experience across luxury hospitality, high-end residential, commercial and mixed-use developments.</p>
-          <p>Her background spans interior design, architectural engineering management and senior lighting design roles in internationally recognised studios. Her work is guided by a sensitivity to Asian aesthetics, global design language and the emotional power of light.</p>
-          <div class="credentials">
-            <span class="credential">Hong Kong born</span>
-            <span class="credential">IALD professional member</span>
-            <span class="credential">Hospitality lighting</span>
-            <span class="credential">Facade and landscape</span>
+        <div class="founder-layout">
+          <figure class="founder-photo">
+            <img src="assets/ada-wong.jpg" alt="Ada Wong, Founder and Design Director of RADA ROUGE">
+          </figure>
+          <div class="founder-panel">
+            <p class="kicker">Founder & Design Director</p>
+            <h2>Ada Wong</h2>
+            <p>Ada Wong is an architectural lighting designer with over eleven years of experience crafting refined lighting environments across luxury hospitality, high-end residential, commercial and mixed-use developments.</p>
+            <p>Born in Hong Kong, Ada studied Interior Design at the Hong Kong University School of Professional and Continuing Education and later earned a degree in Architectural Engineering Management from Birmingham City University in the United Kingdom.</p>
+            <p>Her journey spans AB Concept, Lightlinks & Isometrix and the Hong Kong office of lighting master Tino Kwan, where she contributed to prestigious projects across global markets.</p>
+            <div class="credentials">
+              <span class="credential">Hong Kong born</span>
+              <span class="credential">IALD professional member</span>
+              <span class="credential">11+ years experience</span>
+              <span class="credential">Interior, landscape & facade lighting</span>
+            </div>
           </div>
         </div>
       </div>
@@ -711,7 +783,7 @@
           <p class="kicker">Services</p>
           <div>
             <h2 class="section-title">From concept to commissioning.</h2>
-            <p class="section-copy">RADA ROUGE supports projects from early design vision through technical documentation, coordination, site supervision and final commissioning.</p>
+            <p class="section-copy">The services below follow the company profile, covering design concept, drawings, specifications, coordination and commissioning.</p>
           </div>
         </div>
         <div class="service-grid">
@@ -719,23 +791,43 @@
             <span>Concept</span>
             <div>
               <h3>Lighting Design Concept</h3>
-              <p>Lighting concept, mood board, facade strategy, architectural lighting direction and decorative lighting intent.</p>
+              <p>Lighting concept, mood board and facade strategy, developed to shape the lighting direction of architecture, interior and landscape environments.</p>
             </div>
           </article>
           <article class="service">
             <span>Documentation</span>
             <div>
               <h3>Technical Drawing Package</h3>
-              <p>Lighting technical drawings, detail drawings, fitting specifications, custom light fitting design and installation details.</p>
+              <p>Lighting technical drawings, detail drawings, fitting specifications, custom light fittings design and installation details.</p>
             </div>
           </article>
           <article class="service">
             <span>Delivery</span>
             <div>
               <h3>Coordination & Commissioning</h3>
-              <p>Lighting control specifications, project coordination, on-site coordination, dimming scenes and final defect review.</p>
+              <p>Lighting control specifications, project coordination, on-site coordination, dimming scene table, testing and commissioning, and final defect review.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="kicker">Workflow</p>
+          <div>
+            <h2 class="section-title">A clear process from consultation to final commissioning.</h2>
+            <p class="section-copy">The workflow follows the sequence in the company profile: understanding needs, developing concepts, producing technical documentation, coordinating site progress and finalising the lighting scenes.</p>
+          </div>
+        </div>
+        <div class="listings">
+          <article class="listing"><span>01</span><h3>Initial Consultation</h3><p>Understanding customer needs through consultation.</p></article>
+          <article class="listing"><span>02</span><h3>Concept Development</h3><p>Developing suitable design solutions based on project needs.</p></article>
+          <article class="listing"><span>03</span><h3>Schematic Design</h3><p>Determining the design and developing lighting technical drawings.</p></article>
+          <article class="listing"><span>04</span><h3>Technical Documentation</h3><p>Preparing the lighting technical documents required for the project.</p></article>
+          <article class="listing"><span>05</span><h3>Site Supervision</h3><p>Coordinating on-site construction and installation progress.</p></article>
+          <article class="listing"><span>06</span><h3>Final Commissioning</h3><p>Developing dimming scene tables and completing on-site testing, commissioning and final defect report.</p></article>
         </div>
       </div>
     </section>
@@ -745,41 +837,21 @@
         <div class="section-head">
           <p class="kicker">Selected Projects</p>
           <div>
-            <h2 class="section-title">Hospitality, residential, commercial and facade work.</h2>
-            <p class="section-copy">The full project archive can later become its own page. For the homepage, the selection below introduces the range of RADA ROUGE's current portfolio.</p>
+            <h2 class="section-title">Project work from the company profile.</h2>
+            <p class="section-copy">Each project below uses images and descriptions from the PPT profile. The homepage can later be split into a dedicated project archive when more material is ready.</p>
           </div>
         </div>
-        <div class="projects">
-          <article class="project">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1500&q=82" alt="Luxury interior with warm architectural lighting">
-            </div>
-            <div class="project-body">
-              <p class="project-meta">Hong Kong | Residential</p>
-              <h3>Deep Water Bay No.8</h3>
-              <p>A concise and elegant lighting strategy using linear light, recessed fixtures and integrated details to create a minimal spatial experience where light is felt before the fixture is seen.</p>
-            </div>
-          </article>
-          <article class="project">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1500&q=82" alt="Refined restaurant interior lighting">
-            </div>
-            <div class="project-body">
-              <p class="project-meta">Hong Kong | Restaurant</p>
-              <h3>Sabatini IFC</h3>
-              <p>Layered indirect cove lighting, accent downlights, wall washers and dimming scenes support a romantic, adaptable fine dining atmosphere.</p>
-            </div>
-          </article>
-          <article class="project">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1500&q=82" alt="Hotel interior with ambient architectural lighting">
-            </div>
-            <div class="project-body">
-              <p class="project-meta">Singapore | Hospitality</p>
-              <h3>Wyndham Hotel Ballroom</h3>
-              <p>Ambient, accent and indirect lighting create a refined multifunctional venue that can shift between grand banquets, celebrations and event-focused scenes.</p>
-            </div>
-          </article>
+        <div class="project-gallery">
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-xava.jpg" alt="XAVA Restaurants lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Restaurants | 2026</p><h3>XAVA Restaurants</h3><p>The lighting design dissolves the boundary between interior and exterior, using accent lighting, dynamic sky imagery, custom decorative luminaires, RGBW effects and intelligent dimming control.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-wyndham.jpg" alt="Wyndham Hotel ballroom lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Ballroom | 2026</p><h3>Wyndham Hotel Ballroom</h3><p>Ambient, accent and indirect lighting create a refined multifunctional venue, with cove lighting, adjustable track lighting and integrated dimming scenes for banquets and celebrations.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-eden.jpg" alt="EDEN TAMAN DUTA residential lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Residential | 2026</p><h3>EDEN TAMAN DUTA</h3><p>A warm and serene residential lighting concept using indirect light, integrated luminaires, landscape accents and decorative lanterns to balance architecture, nature and emotion.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-pgtc.jpg" alt="PGTC Petronas facade lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Facade | 2026</p><h3>PGTC Petronas Facade</h3><p>Integrated indirect linear lighting expresses the identity of a large-scale headquarters, revealing facade details while balancing site safety, guidance and environmental integration.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-ssc-go-park.jpg" alt="SSC Go Park Sports lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Sports & Mixed-use | 2025</p><h3>SSC Go Park Sports</h3><p>Functional and decorative lighting support commercial spaces, residential use, outdoor sports venues and driving roads, combining floodlights, light poles, linear strips and in-ground uplights.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-discovery.jpg" alt="Discovery Valley Park lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Landscape | 2025</p><h3>Discovery Valley Park</h3><p>A delicate dialogue between architecture, landscape and nature, softly accentuating roof geometry, columns, materiality, flowering trees and pathway guidance.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-sabatini.jpg" alt="Sabatini restaurant lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Restaurant | 2024</p><h3>Sabatini IFC</h3><p>Layered indirect cove lighting, accent downlights, wall washers, wall lamps, candlelight and table lamps create a romantic fine dining atmosphere with adaptable dimming scenes.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-vwalk.jpg" alt="V Walk Clubhouse lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse</h3><p>Warm lighting, dimmable high-power spotlights and intimate table lamp moments create a relaxed home-like atmosphere around the void, artwork and leisure areas.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-deep-water-bay.jpg" alt="Deep Water Bay No.8 lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Residential | 2016</p><h3>Deep Water Bay No.8</h3><p>Linear light strips, recessed fixtures and square walkway lights form a concise and elegant strategy where light is visible without exposing the presence of fixtures.</p></div></article>
+          <article class="project-card"><div class="project-card-image"><img src="assets/project-cheung-kung-koon.jpg" alt="Cheung Kung Koon lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Dining | 2015</p><h3>Cheung Kung Koon</h3><p>Light strips and recessed ceiling lights create a comfortable dining atmosphere, enhancing architectural details with concealed mirrored-finish light shields.</p></div></article>
         </div>
       </div>
     </section>
