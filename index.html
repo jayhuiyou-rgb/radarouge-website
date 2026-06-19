@@ -738,6 +738,40 @@
       color: var(--muted);
     }
 
+
+
+
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 70;
+      display: grid;
+      gap: 10px;
+    }
+
+    .whatsapp-float a {
+      min-width: 168px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(246, 240, 232, 0.22);
+      background: rgba(18, 16, 14, 0.92);
+      color: var(--ink);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(14px);
+    }
+
+    .whatsapp-float a:hover {
+      border-color: rgba(214, 177, 110, 0.78);
+      background: rgba(35, 29, 22, 0.96);
+    }
     .footer {
       width: min(var(--max), calc(100% - 36px));
       margin: 0 auto;
@@ -750,6 +784,10 @@
     }
 
     @media (max-width: 900px) {
+      body {
+        padding-bottom: 92px;
+      }
+
       .nav {
         align-items: flex-start;
       }
@@ -799,6 +837,10 @@
     }
 
     @media (max-width: 640px) {
+      body {
+        padding-bottom: 92px;
+      }
+
       .nav {
         width: min(var(--max), calc(100% - 24px));
         display: grid;
@@ -811,7 +853,11 @@
       .hero-inner,
       .section-inner,
       .proof-strip,
-      .footer {
+
+
+
+
+    .footer {
         width: min(var(--max), calc(100% - 24px));
       }
 
@@ -838,10 +884,34 @@
       }
 
       .founder-photo {
-        min-height: 360px;
+        min-height: 0;
+        aspect-ratio: 3 / 4;
       }
 
-      .footer {
+      .founder-photo img {
+        object-fit: contain;
+        background: var(--panel);
+      }
+
+
+
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .whatsapp-float a {
+        min-width: 0;
+        min-height: 40px;
+        padding: 8px 10px;
+        font-size: 0.66rem;
+        text-align: center;
+      }
+
+    .footer {
         display: grid;
       }
     }
@@ -1072,8 +1142,7 @@
           <h2>Start a lighting design conversation.</h2>
         </div>
         <div class="contact-card">
-          <a href="mailto:hello@radarouge.com">hello@radarouge.com</a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="mailto:hello@radarouge.com">hello@radarouge.com</a>          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://radarouge.com/">radarouge.com</a>
         </div>
       </div>
@@ -1102,6 +1171,11 @@
 
   </main>
 
+
+  <div class="whatsapp-float" aria-label="WhatsApp contacts">
+    <a href="https://wa.link/oc2hk2" target="_blank" rel="noreferrer">WhatsApp Hong Kong</a>
+    <a href="https://wa.link/ka8rgg" target="_blank" rel="noreferrer">WhatsApp Malaysia</a>
+  </div>
   <footer class="footer">
     <span>Copyright 2026 RADA ROUGE Lighting Design Consultant</span>
     <span>Light the way with heart and hue</span>
@@ -1207,13 +1281,16 @@
         "Linear light strips, recessed fixtures and square walkway lights form a concise and elegant strategy where light is visible without exposing the presence of fixtures.": "線性燈帶、嵌入式燈具及方形走廊燈形成簡潔優雅的策略，讓光可被感知，而燈具本身則低調隱藏。",
         "Light strips and recessed ceiling lights create a comfortable dining atmosphere, enhancing architectural details with concealed mirrored-finish light shields.": "燈帶與嵌入式天花燈營造舒適用餐氛圍，並以隱藏式鏡面燈罩強化建築細節。",
         "Get In Touch": "聯絡我們",
+        "WhatsApp Hong Kong": "香港 WhatsApp",
+        "WhatsApp Malaysia": "馬來西亞 WhatsApp",
+        "WhatsApp": "WhatsApp 查詢",
         "Start a lighting design conversation.": "展開一場關於光的設計對話。",
         "Copyright 2026 RADA ROUGE Lighting Design Consultant": "版權所有 2026 RADA ROUGE 燈光設計顧問",
         "Light the way with heart and hue": "以心與色彩照亮前路"
       }
     };
 
-    const translatableSelector = '.brand span, .nav-links a, .hero h1, .button, .kicker, .section-title, .section-copy, .statement strong, .statement p, .principle h3, .principle p, .founder-panel h2, .founder-panel p, .credential, .service h3, .service p, .listing h3, .listing p, .project-card h3, .project-card p, .contact h2, .contact-card p, .footer span';
+    const translatableSelector = '.brand span, .nav-links a, .hero h1, .button, .kicker, .section-title, .section-copy, .statement strong, .statement p, .principle h3, .principle p, .founder-panel h2, .founder-panel p, .credential, .service h3, .service p, .listing h3, .listing p, .project-card h3, .project-card p, .contact h2, .contact-card p, .whatsapp-float a, .footer span';
     const languageButtons = Array.from(document.querySelectorAll('.language-switch button'));
 
     function registerTranslatableText() {
@@ -1333,6 +1410,15 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
