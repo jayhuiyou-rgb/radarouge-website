@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -78,13 +78,13 @@
     }
 
     .brand strong {
-      font-size: 0.98rem;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 700;`n      line-height: 1;
     }
 
     .brand span {
       color: var(--muted);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
     }
 
     .nav-links {
@@ -108,6 +108,43 @@
       color: var(--ink);
       border-color: var(--gold);
     }
+
+    main > section[hidden] {
+      display: none !important;
+    }
+
+    .nav-links a.is-active {
+      color: var(--ink);
+      border-color: var(--gold);
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid rgba(246, 240, 232, 0.18);
+      padding: 3px;
+      background: rgba(18, 16, 14, 0.72);
+    }
+
+    .language-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      padding: 6px 8px;
+      text-transform: uppercase;
+    }
+
+    .language-switch button.is-active {
+      background: rgba(214, 177, 110, 0.16);
+      color: var(--ink);
+    }
+
+
 
     .hero {
       min-height: 96vh;
@@ -352,13 +389,13 @@
 
     .founder-layout {
       display: grid;
-      grid-template-columns: minmax(260px, 0.38fr) minmax(0, 0.62fr);
+      grid-template-columns: minmax(220px, 0.3fr) minmax(0, 0.7fr);
       gap: 34px;
       align-items: stretch;
     }
 
     .founder-photo {
-      min-height: 620px;
+      min-height: 500px;
       border: 1px solid var(--line);
       overflow: hidden;
       background: var(--panel);
@@ -413,6 +450,164 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
+    }
+
+
+
+    .project-card {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .project-card:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .project-card::after {
+      content: "View gallery";
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      padding: 8px 10px;
+      border: 1px solid rgba(246, 240, 232, 0.28);
+      background: rgba(8, 7, 6, 0.78);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .project-card:hover::after,
+    .project-card:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(5, 4, 3, 0.92);
+    }
+
+    .gallery-modal.is-open {
+      display: flex;
+    }
+
+    .gallery-shell {
+      width: min(1120px, 100%);
+      max-height: min(760px, calc(100vh - 56px));
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 16px;
+    }
+
+    .gallery-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .gallery-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.6rem, 3vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .gallery-meta {
+      margin: 6px 0 0;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .gallery-close,
+    .gallery-arrow {
+      border: 1px solid rgba(246, 240, 232, 0.26);
+      background: rgba(18, 16, 14, 0.86);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .gallery-close {
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .gallery-stage {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #050403;
+    }
+
+    .gallery-stage img {
+      width: 100%;
+      height: min(62vh, 580px);
+      object-fit: contain;
+    }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      width: 46px;
+      height: 54px;
+      transform: translateY(-50%);
+      font-size: 2rem;
+    }
+
+    .gallery-prev {
+      left: 14px;
+    }
+
+    .gallery-next {
+      right: 14px;
+    }
+
+    .gallery-arrow span {
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin: 0 auto;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+    }
+
+    .gallery-prev span {
+      transform: rotate(-135deg);
+    }
+
+    .gallery-next span {
+      transform: rotate(45deg);
+    }
+    .gallery-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .gallery-counter {
+      color: var(--ink);
+      white-space: nowrap;
     }
 
     .project-card {
@@ -591,7 +786,7 @@
       }
 
       .founder-photo {
-        min-height: 560px;
+        min-height: 460px;
       }
 
       .principles,
@@ -642,7 +837,7 @@
       }
 
       .founder-photo {
-        min-height: 440px;
+        min-height: 360px;
       }
 
       .footer {
@@ -667,6 +862,11 @@
         <a href="#portfolio">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+
+      <div class="language-switch" aria-label="Language selector">
+        <button type="button" data-lang="en" class="is-active">EN</button>
+        <button type="button" data-lang="zh">中文</button>
+      </div>
     </nav>
   </header>
 
@@ -682,25 +882,6 @@
         </div>
       </div>
     </section>
-
-    <div class="proof-strip" aria-label="RADA ROUGE highlights">
-      <div class="proof">
-        <strong>11+</strong>
-        <span>Years of lighting design experience</span>
-      </div>
-      <div class="proof">
-        <strong>IALD</strong>
-        <span>Professional member background</span>
-      </div>
-      <div class="proof">
-        <strong>Asia</strong>
-        <span>Hong Kong, Malaysia, Singapore and beyond</span>
-      </div>
-      <div class="proof">
-        <strong>5</strong>
-        <span>Core sectors in architectural lighting</span>
-      </div>
-    </div>
 
     <section class="section" id="about">
       <div class="section-inner">
@@ -763,9 +944,12 @@
           <div class="founder-panel">
             <p class="kicker">Founder & Design Director</p>
             <h2>Ada Wong</h2>
-            <p>Ada Wong is an architectural lighting designer with over eleven years of experience crafting refined lighting environments across luxury hospitality, high-end residential, commercial and mixed-use developments.</p>
-            <p>Born in Hong Kong, Ada studied Interior Design at the Hong Kong University School of Professional and Continuing Education and later earned a degree in Architectural Engineering Management from Birmingham City University in the United Kingdom.</p>
-            <p>Her journey spans AB Concept, Lightlinks & Isometrix and the Hong Kong office of lighting master Tino Kwan, where she contributed to prestigious projects across global markets.</p>
+            <p>Ada Wong is a distinguished architectural lighting designer with over eleven years of experience crafting refined lighting environments across luxury hospitality, high-end residential, commercial and mixed-use developments. As a professional member of the International Association of Lighting Designers (IALD), she is recognized for her ability to shape spaces through light with both artistic sensitivity and technical precision.</p>
+            <p>Guided by a design philosophy that harmonizes Asian sensibilities with global aesthetics, Ada approaches lighting as an essential layer of architecture, one that defines atmosphere, reveals materiality and creates emotional resonance. To her, light is more than illumination; it is a powerful design language that transforms space and elevates human experience.</p>
+            <p>Born in Hong Kong, Ada's academic journey reflects a multidisciplinary foundation in design and engineering. She studied Interior Design at the Hong Kong University School of Professional and Continuing Education, and later earned a degree in Architectural Engineering Management from Birmingham City University in the United Kingdom.</p>
+            <p>Her professional journey began at an interior and environmental design company, where she developed a deep understanding of spatial design and environmental design. She later joined the Japanese lighting consultancy Lightlinks & Isometrix, managing large-scale commercial and five-star hospitality developments across Hong Kong and Mainland China.</p>
+            <p>Ada subsequently joined the Hong Kong office of internationally acclaimed lighting master Tino Kwan as Senior Lighting Designer, contributing to a portfolio of prestigious projects across global markets. Her portfolio spans interior, landscape and facade lighting, encompassing iconic hotels, luxury residences, integrated developments and premium commercial spaces.</p>
+            <p>Throughout her career, she has collaborated with numerous renowned architecture and design firms, including Zaha Hadid Architects, LWK + Partners, LTW Designworks, Steven Leung Design.</p>
             <div class="credentials">
               <span class="credential">Hong Kong born</span>
               <span class="credential">IALD professional member</span>
@@ -788,24 +972,45 @@
         </div>
         <div class="service-grid">
           <article class="service">
-            <span>Concept</span>
+            <span>01</span>
             <div>
               <h3>Lighting Design Concept</h3>
-              <p>Lighting concept, mood board and facade strategy, developed to shape the lighting direction of architecture, interior and landscape environments.</p>
+              <p>Lighting concept, mood board and facade strategy.</p>
             </div>
           </article>
           <article class="service">
-            <span>Documentation</span>
+            <span>02</span>
             <div>
-              <h3>Technical Drawing Package</h3>
-              <p>Lighting technical drawings, detail drawings, fitting specifications, custom light fittings design and installation details.</p>
+              <h3>Lighting Drawings</h3>
+              <p>Lighting technical drawing and lighting detail drawing.</p>
             </div>
           </article>
           <article class="service">
-            <span>Delivery</span>
+            <span>03</span>
             <div>
-              <h3>Coordination & Commissioning</h3>
-              <p>Lighting control specifications, project coordination, on-site coordination, dimming scene table, testing and commissioning, and final defect review.</p>
+              <h3>Lighting Fitting Specifications</h3>
+              <p>Lighting specifications and customised light fittings design and installation details.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>04</span>
+            <div>
+              <h3>Architectural Lighting</h3>
+              <p>Architectural lighting and decorative lights.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>05</span>
+            <div>
+              <h3>Lighting Control Specifications</h3>
+              <p>Lighting control specifications.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>06</span>
+            <div>
+              <h3>Lighting Coordination</h3>
+              <p>Project coordination and on-site coordination.</p>
             </div>
           </article>
         </div>
@@ -842,47 +1047,19 @@
           </div>
         </div>
         <div class="project-gallery">
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-xava.jpg" alt="XAVA Restaurants lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Restaurants | 2026</p><h3>XAVA Restaurants</h3><p>The lighting design dissolves the boundary between interior and exterior, using accent lighting, dynamic sky imagery, custom decorative luminaires, RGBW effects and intelligent dimming control.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-wyndham.jpg" alt="Wyndham Hotel ballroom lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Ballroom | 2026</p><h3>Wyndham Hotel Ballroom</h3><p>Ambient, accent and indirect lighting create a refined multifunctional venue, with cove lighting, adjustable track lighting and integrated dimming scenes for banquets and celebrations.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-eden.jpg" alt="EDEN TAMAN DUTA residential lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Residential | 2026</p><h3>EDEN TAMAN DUTA</h3><p>A warm and serene residential lighting concept using indirect light, integrated luminaires, landscape accents and decorative lanterns to balance architecture, nature and emotion.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-pgtc.jpg" alt="PGTC Petronas facade lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Facade | 2026</p><h3>PGTC Petronas Facade</h3><p>Integrated indirect linear lighting expresses the identity of a large-scale headquarters, revealing facade details while balancing site safety, guidance and environmental integration.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-ssc-go-park.jpg" alt="SSC Go Park Sports lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Sports & Mixed-use | 2025</p><h3>SSC Go Park Sports</h3><p>Functional and decorative lighting support commercial spaces, residential use, outdoor sports venues and driving roads, combining floodlights, light poles, linear strips and in-ground uplights.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-discovery.jpg" alt="Discovery Valley Park lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Landscape | 2025</p><h3>Discovery Valley Park</h3><p>A delicate dialogue between architecture, landscape and nature, softly accentuating roof geometry, columns, materiality, flowering trees and pathway guidance.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-sabatini.jpg" alt="Sabatini restaurant lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Restaurant | 2024</p><h3>Sabatini IFC</h3><p>Layered indirect cove lighting, accent downlights, wall washers, wall lamps, candlelight and table lamps create a romantic fine dining atmosphere with adaptable dimming scenes.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-vwalk.jpg" alt="V Walk Clubhouse lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse</h3><p>Warm lighting, dimmable high-power spotlights and intimate table lamp moments create a relaxed home-like atmosphere around the void, artwork and leisure areas.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-deep-water-bay.jpg" alt="Deep Water Bay No.8 lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Residential | 2016</p><h3>Deep Water Bay No.8</h3><p>Linear light strips, recessed fixtures and square walkway lights form a concise and elegant strategy where light is visible without exposing the presence of fixtures.</p></div></article>
-          <article class="project-card"><div class="project-card-image"><img src="assets/project-cheung-kung-koon.jpg" alt="Cheung Kung Koon lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Dining | 2015</p><h3>Cheung Kung Koon</h3><p>Light strips and recessed ceiling lights create a comfortable dining atmosphere, enhancing architectural details with concealed mirrored-finish light shields.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sectors">
-      <div class="section-inner">
-        <div class="section-head">
-          <p class="kicker">Project Types</p>
-          <p class="section-copy">The project library from the company profile can later be arranged by sector, location and year.</p>
-        </div>
-        <div class="listings">
-          <article class="listing">
-            <span>Hospitality</span>
-            <h3>Hotels, clubhouses and restaurants</h3>
-            <p>Andaz Hotel, V Walk Clubhouse, XAVA Restaurants, Sabatini IFC and Wyndham Hotel Ballroom.</p>
-          </article>
-          <article class="listing">
-            <span>Residential</span>
-            <h3>Luxury homes and sales environments</h3>
-            <p>Deep Water Bay No.8, EDEN TAMAN DUTA and high-end residential interior, facade and landscape lighting.</p>
-          </article>
-          <article class="listing">
-            <span>Commercial</span>
-            <h3>Mixed-use and public-facing spaces</h3>
-            <p>Commercial interiors, outdoor sport centres, sales offices and development environments.</p>
-          </article>
-          <article class="listing">
-            <span>Facade & Landscape</span>
-            <h3>Nighttime identity and spatial guidance</h3>
-            <p>Architectural facade expression, landscape hierarchy, pathway comfort and glare-controlled outdoor lighting.</p>
-          </article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open XAVA Restaurants gallery" data-gallery="assets/project-xava.jpg|assets/project-xava-2.jpg"><div class="project-card-image"><img src="assets/project-xava.jpg" alt="XAVA Restaurants lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Restaurants | 2026</p><h3>XAVA Restaurants</h3><p>The lighting design dissolves the boundary between interior and exterior, using accent lighting, dynamic sky imagery, custom decorative luminaires, RGBW effects and intelligent dimming control.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open Wyndham Hotel Ballroom gallery" data-gallery="assets/project-wyndham.jpg|assets/project-wyndham-2.jpg"><div class="project-card-image"><img src="assets/project-wyndham.jpg" alt="Wyndham Hotel ballroom lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Ballroom | 2026</p><h3>Wyndham Hotel Ballroom</h3><p>Ambient, accent and indirect lighting create a refined multifunctional venue, with cove lighting, adjustable track lighting and integrated dimming scenes for banquets and celebrations.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open EDEN TAMAN DUTA gallery" data-gallery="assets/project-eden.jpg|assets/project-eden-4.jpg|assets/project-eden-5.jpg|assets/project-eden-2.jpg|assets/project-eden-3.jpg"><div class="project-card-image"><img src="assets/project-eden.jpg" alt="EDEN TAMAN DUTA residential lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Residential | 2026</p><h3>EDEN TAMAN DUTA</h3><p>A warm and serene residential lighting concept using indirect light, integrated luminaires, landscape accents and decorative lanterns to balance architecture, nature and emotion.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open PGTC Petronas Facade gallery" data-gallery="assets/project-pgtc.jpg|assets/project-pgtc-2.jpg"><div class="project-card-image"><img src="assets/project-pgtc.jpg" alt="PGTC Petronas facade lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Facade | 2026</p><h3>PGTC Petronas Facade</h3><p>Integrated indirect linear lighting expresses the identity of a large-scale headquarters, revealing facade details while balancing site safety, guidance and environmental integration.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open SSC Go Park Sports gallery" data-gallery="assets/project-ssc-go-park.jpg|assets/project-ssc-go-park-2.jpg|assets/project-ssc-go-park-3.jpg|assets/project-ssc-go-park-4.jpg|assets/project-ssc-go-park-5.jpg|assets/project-ssc-go-park-6.jpg|assets/project-ssc-go-park-7.jpg|assets/project-ssc-go-park-8.jpg|assets/project-ssc-go-park-9.jpg|assets/project-ssc-go-park-10.jpg"><div class="project-card-image"><img src="assets/project-ssc-go-park.jpg" alt="SSC Go Park Sports lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Sports & Mixed-use | 2025</p><h3>SSC Go Park Sports</h3><p>Functional and decorative lighting support commercial spaces, residential use, outdoor sports venues and driving roads, combining floodlights, light poles, linear strips and in-ground uplights.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open Discovery Valley Park gallery" data-gallery="assets/project-discovery.jpg"><div class="project-card-image"><img src="assets/project-discovery.jpg" alt="Discovery Valley Park lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Landscape | 2025</p><h3>Discovery Valley Park</h3><p>A delicate dialogue between architecture, landscape and nature, softly accentuating roof geometry, columns, materiality, flowering trees and pathway guidance.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open Sabatini IFC gallery" data-gallery="assets/project-sabatini.jpg|assets/project-sabatini-2.jpg|assets/project-sabatini-3.jpg|assets/project-sabatini-4.jpg|assets/project-sabatini-5.jpg|assets/project-sabatini-6.jpg|assets/project-sabatini-7.jpg|assets/project-sabatini-8.jpg"><div class="project-card-image"><img src="assets/project-sabatini.jpg" alt="Sabatini restaurant lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Restaurant | 2024</p><h3>Sabatini IFC</h3><p>Layered indirect cove lighting, accent downlights, wall washers, wall lamps, candlelight and table lamps create a romantic fine dining atmosphere with adaptable dimming scenes.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open SKY Lounge Bar gallery" data-gallery="assets/project-sky-lounge.jpg|assets/project-sky-lounge-2.jpg|assets/project-sky-lounge-3.jpg|assets/project-sky-lounge-4.jpg|assets/project-sky-lounge-5.jpg|assets/project-sky-lounge-6.jpg"><div class="project-card-image"><img src="assets/project-sky-lounge.jpg" alt="SKY Lounge Bar lighting design"></div><div class="project-card-body"><p class="project-meta">Shenzhen | Lounge Bar | 2024</p><h3>SKY Lounge Bar</h3><p>A relaxed mood and high-end lighting strategy using efficient ceiling lights, custom pendant lighting and a water ripple projector to create a wave-like dining atmosphere.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open V Walk Clubhouse 2 gallery" data-gallery="assets/project-vwalk-clubhouse-2.jpg|assets/project-vwalk-clubhouse-2-2.jpg|assets/project-vwalk-clubhouse-2-3.jpg|assets/project-vwalk-clubhouse-2-4.jpg|assets/project-vwalk-clubhouse-2-5.jpg|assets/project-vwalk-clubhouse-2-6.jpg|assets/project-vwalk-clubhouse-2-7.jpg|assets/project-vwalk-clubhouse-2-8.jpg"><div class="project-card-image"><img src="assets/project-vwalk-clubhouse-2.jpg" alt="V Walk Clubhouse 2 lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse 2</h3><p>A continuation of the clubhouse lighting language, shaping intimate leisure, dining and social areas with warm layers, accent lighting and carefully integrated decorative moments.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open Andaz Hotel gallery" data-gallery="assets/project-andaz-hotel.jpg|assets/project-andaz-hotel-2.jpg"><div class="project-card-image"><img src="assets/project-andaz-hotel.jpg" alt="Andaz Hotel lighting design"></div><div class="project-card-body"><p class="project-meta">Taiwan | Hotel | 2024</p><h3>Andaz Hotel</h3><p>The lighting design creates a simple yet contemporary ambience, using soft spherical glow, corridor highlights and indirect cove lighting to enhance the architectural ceiling and guest experience.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open V Walk Clubhouse gallery" data-gallery="assets/project-vwalk.jpg|assets/project-vwalk-2.jpg|assets/project-vwalk-3.jpg|assets/project-vwalk-4.jpg|assets/project-vwalk-5.jpg|assets/project-vwalk-6.jpg"><div class="project-card-image"><img src="assets/project-vwalk.jpg" alt="V Walk Clubhouse lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse</h3><p>Warm lighting, dimmable high-power spotlights and intimate table lamp moments create a relaxed home-like atmosphere around the void, artwork and leisure areas.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open Deep Water Bay No.8 gallery" data-gallery="assets/project-deep-water-bay.jpg|assets/project-deep-water-bay-2.jpg|assets/project-deep-water-bay-3.jpg|assets/project-deep-water-bay-4.jpg"><div class="project-card-image"><img src="assets/project-deep-water-bay.jpg" alt="Deep Water Bay No.8 lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Residential | 2016</p><h3>Deep Water Bay No.8</h3><p>Linear light strips, recessed fixtures and square walkway lights form a concise and elegant strategy where light is visible without exposing the presence of fixtures.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open Cheung Kung Koon gallery" data-gallery="assets/project-cheung-kung-koon.jpg|assets/project-cheung-kung-koon-2.jpg"><div class="project-card-image"><img src="assets/project-cheung-kung-koon.jpg" alt="Cheung Kung Koon lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Dining | 2015</p><h3>Cheung Kung Koon</h3><p>Light strips and recessed ceiling lights create a comfortable dining atmosphere, enhancing architectural details with concealed mirrored-finish light shields.</p></div></article>
         </div>
       </div>
     </section>
@@ -894,18 +1071,273 @@
           <h2>Start a lighting design conversation.</h2>
         </div>
         <div class="contact-card">
-          <p>Available for architectural exterior lighting, hospitality environments, luxury residences, landscape lighting and mixed-use developments.</p>
           <a href="mailto:hello@radarouge.com">hello@radarouge.com</a>
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://radarouge.com/">radarouge.com</a>
         </div>
       </div>
     </section>
+
+    <div class="gallery-modal" id="project-gallery-modal" aria-hidden="true">
+      <div class="gallery-shell" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
+        <div class="gallery-top">
+          <div>
+            <p class="gallery-meta" id="gallery-meta"></p>
+            <h2 class="gallery-title" id="gallery-title"></h2>
+          </div>
+          <button class="gallery-close" type="button" aria-label="Close gallery">x</button>
+        </div>
+        <div class="gallery-stage">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous image"><span aria-hidden="true"></span></button>
+          <img id="gallery-image" src="" alt="">
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Next image"><span aria-hidden="true"></span></button>
+        </div>
+        <div class="gallery-bottom">
+          <p id="gallery-caption"></p>
+          <p class="gallery-counter" id="gallery-counter"></p>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer">
     <span>Copyright 2026 RADA ROUGE Lighting Design Consultant</span>
     <span>Light the way with heart and hue</span>
   </footer>
+
+  <script>
+
+
+    const translations = {
+      zh: {
+        "Lighting Design Consultant": "燈光設計顧問",
+        "About": "關於",
+        "Mission": "理念",
+        "Founder": "創辦人",
+        "Services": "服務",
+        "Workflow": "流程",
+        "Projects": "項目",
+        "Contact": "聯絡",
+        "Architectural Lighting Consultancy": "建築燈光顧問",
+        "Light the way with heart and hue.": "以光引路，以心與色彩塑造空間。",
+        "RADA ROUGE is an architectural lighting consultancy dedicated to transforming architecture through the art and science of light. Every beam, shadow and subtle contrast is intentionally crafted to enhance form, reveal spatial depth and create meaningful experiences.": "RADA ROUGE 是一間建築燈光顧問公司，致力以光的藝術與技術轉化建築空間。每一道光、每一片陰影與每一層細微對比，皆經過精心編排，以強化形體、揭示空間層次，並創造有意義的體驗。",
+        "View Selected Projects": "瀏覽精選項目",
+        "Explore Services": "了解服務",
+        "About RADA ROUGE": "關於 RADA ROUGE",
+        "We orchestrate light to bring architecture to life.": "我們編排光影，讓建築被重新看見。",
+        "RADA ROUGE Lighting Design Consultancy works with architects, interior designers and developers to translate visionary concepts into practical, measurable lighting solutions across architectural exterior lighting, hotel environments, luxury residences and large-scale mixed-use developments.": "RADA ROUGE Lighting Design Consultancy 與建築師、室內設計師及發展商合作，將富有願景的概念轉化為可落地、可衡量的燈光方案，涵蓋建築外立面、酒店空間、豪宅及大型綜合發展項目。",
+        "We fearlessly compose light and shadow.": "我們無畏地譜寫光與影。",
+        "Lighting design is far more than illumination. It shapes perception, evokes emotion and defines the identity of a space.": "燈光設計遠不只是照明。它塑造感知、喚起情感，並定義空間的身份。",
+        "By integrating artistic sensibility with engineering excellence, every design is made visually compelling, technically refined and purpose-driven.": "透過融合藝術感知與工程精準度，每一個設計都兼具視覺感染力、技術細節與明確目的。",
+        "Mission & Philosophy": "使命與理念",
+        "RADA ROUGE sees light as a language of architecture. The studio harnesses the power of light with precision and purpose, transforming creative visions into intelligent, meaningful lighting experiences.": "RADA ROUGE 視光為建築的語言。我們以精準而有目的的方式運用光，將創意願景轉化為智能而有意義的燈光體驗。",
+        "Design Excellence": "卓越設計",
+        "Creating timeless, expressive and human-centred lighting designs that inspire, endure and strengthen spatial identity.": "創造歷久彌新、富表現力並以人為本的燈光設計，啟發感受、經得起時間考驗，並強化空間身份。",
+        "Technology Excellence": "技術卓越",
+        "Integrating advanced lighting systems, smart controls and sustainable technologies to achieve optimal performance and efficiency.": "整合先進燈光系統、智能控制及可持續技術，以實現理想效能與效率。",
+        "Collaboration": "協作",
+        "Working closely with architects, designers and developers with unity and trust, refining ideas to achieve harmony and precision.": "與建築師、設計師及發展商緊密合作，以信任與默契推進設計，令概念達至和諧與精準。",
+        "Founder & Design Director": "創辦人及設計總監",
+        "Ada Wong is a distinguished architectural lighting designer with over eleven years of experience crafting refined lighting environments across luxury hospitality, high-end residential, commercial and mixed-use developments. As a professional member of the International Association of Lighting Designers (IALD), she is recognized for her ability to shape spaces through light with both artistic sensitivity and technical precision.": "Ada Wong 是一位資深建築燈光設計師，擁有逾十一年經驗，專注為高端酒店、豪宅、商業及綜合發展項目塑造精緻的燈光環境。作為 International Association of Lighting Designers (IALD) 的專業會員，她以兼具藝術敏銳度與技術精準度的方式，透過光塑造空間。",
+        "Guided by a design philosophy that harmonizes Asian sensibilities with global aesthetics, Ada approaches lighting as an essential layer of architecture, one that defines atmosphere, reveals materiality and creates emotional resonance. To her, light is more than illumination; it is a powerful design language that transforms space and elevates human experience.": "Ada 的設計理念融合亞洲美學感知與國際視野。她視燈光為建築不可或缺的一層，能定義氛圍、呈現材質，並引發情感共鳴。對她而言，光不只是照明，而是一種能轉化空間、提升人們體驗的設計語言。",
+        "Born in Hong Kong, Ada's academic journey reflects a multidisciplinary foundation in design and engineering. She studied Interior Design at the Hong Kong University School of Professional and Continuing Education, and later earned a degree in Architectural Engineering Management from Birmingham City University in the United Kingdom.": "Ada 出生於香港，其學術背景橫跨設計與工程。她於香港大學專業進修學院修讀室內設計，其後於英國 Birmingham City University 取得 Architectural Engineering Management 學位。",
+        "Her professional journey began at an interior and environmental design company, where she developed a deep understanding of spatial design and environmental design. She later joined the Japanese lighting consultancy Lightlinks & Isometrix, managing large-scale commercial and five-star hospitality developments across Hong Kong and Mainland China.": "她的職業生涯始於一間室內及環境設計公司，並在過程中對空間設計與環境設計建立了深刻理解。其後她加入日本燈光顧問公司 Lightlinks & Isometrix，負責香港及中國內地大型商業與五星級酒店發展項目。",
+        "Ada subsequently joined the Hong Kong office of internationally acclaimed lighting master Tino Kwan as Senior Lighting Designer, contributing to a portfolio of prestigious projects across global markets. Her portfolio spans interior, landscape and facade lighting, encompassing iconic hotels, luxury residences, integrated developments and premium commercial spaces.": "其後，Ada 加入國際知名燈光大師 Tino Kwan 的香港辦公室，擔任高級燈光設計師，參與多個國際市場的高端項目。她的作品涵蓋室內、景觀及外立面燈光，包括地標酒店、豪宅、綜合發展項目及高端商業空間。",
+        "Throughout her career, she has collaborated with numerous renowned architecture and design firms, including Zaha Hadid Architects, LWK + Partners, LTW Designworks, Steven Leung Design.": "在職業生涯中，她曾與多間知名建築及設計公司合作，包括 Zaha Hadid Architects、LWK + Partners、LTW Designworks 及 Steven Leung Design。",
+        "Hong Kong born": "香港出生",
+        "IALD professional member": "IALD 專業會員",
+        "11+ years experience": "逾 11 年經驗",
+        "Interior, landscape & facade lighting": "室內、景觀及外立面燈光",
+        "From concept to commissioning.": "由概念至調試落成。",
+        "The services below follow the company profile, covering design concept, drawings, specifications, coordination and commissioning.": "以下服務根據公司簡介整理，涵蓋設計概念、圖則、規格、協調及調試。",
+        "Lighting Design Concept": "燈光設計概念",
+        "Lighting concept, mood board and facade strategy.": "燈光概念、情緒板及外立面策略。",
+        "Lighting Drawings": "燈光圖則",
+        "Lighting technical drawing and lighting detail drawing.": "燈光技術圖及燈光細節圖。",
+        "Lighting Fitting Specifications": "燈具規格",
+        "Lighting specifications and customised light fittings design and installation details.": "燈具規格、訂製燈具設計及安裝細節。",
+        "Architectural Lighting": "建築燈光",
+        "Architectural lighting and decorative lights.": "建築燈光及裝飾燈具。",
+        "Lighting Control Specifications": "燈光控制規格",
+        "Lighting control specifications.": "燈光控制規格。",
+        "Lighting Coordination": "燈光協調",
+        "Project coordination and on-site coordination.": "項目協調及現場協調。",
+        "A clear process from consultation to final commissioning.": "由諮詢至最終調試的清晰流程。",
+        "The workflow follows the sequence in the company profile: understanding needs, developing concepts, producing technical documentation, coordinating site progress and finalising the lighting scenes.": "流程根據公司簡介排序：了解需求、發展概念、製作技術文件、協調現場進度，並完成燈光場景調試。",
+        "Initial Consultation": "初步諮詢",
+        "Understanding customer needs through consultation.": "透過諮詢了解客戶需求。",
+        "Concept Development": "概念發展",
+        "Developing suitable design solutions based on project needs.": "根據項目需要發展合適的設計方案。",
+        "Schematic Design": "方案設計",
+        "Determining the design and developing lighting technical drawings.": "確定設計方向並發展燈光技術圖則。",
+        "Technical Documentation": "技術文件",
+        "Preparing the lighting technical documents required for the project.": "準備項目所需的燈光技術文件。",
+        "Site Supervision": "現場監督",
+        "Coordinating on-site construction and installation progress.": "協調現場施工及安裝進度。",
+        "Final Commissioning": "最終調試",
+        "Developing dimming scene tables and completing on-site testing, commissioning and final defect report.": "制定調光場景表，完成現場測試、調試及最終缺陷報告。",
+        "Selected Projects": "精選項目",
+        "Project work from the company profile.": "公司簡介中的項目作品。",
+        "Each project below uses images and descriptions from the PPT profile. The homepage can later be split into a dedicated project archive when more material is ready.": "以下每個項目均使用 PPT 簡介中的圖片及描述。日後當資料更完整時，可再整理成獨立項目檔案。",
+        "Singapore | Restaurants | 2026": "新加坡 | 餐廳 | 2026",
+        "Singapore | Ballroom | 2026": "新加坡 | 宴會廳 | 2026",
+        "Malaysia | Residential | 2026": "馬來西亞 | 住宅 | 2026",
+        "Malaysia | Facade | 2026": "馬來西亞 | 外立面 | 2026",
+        "Hong Kong | Sports & Mixed-use | 2025": "香港 | 運動及綜合用途 | 2025",
+        "Hong Kong | Landscape | 2025": "香港 | 景觀 | 2025",
+        "Hong Kong | Restaurant | 2024": "香港 | 餐廳 | 2024",
+        "Shenzhen | Lounge Bar | 2024": "深圳 | 酒廊 | 2024",
+        "Hong Kong | Clubhouse | 2019": "香港 | 會所 | 2019",
+        "Taiwan | Hotel | 2024": "台灣 | 酒店 | 2024",
+        "Hong Kong | Residential | 2016": "香港 | 住宅 | 2016",
+        "Hong Kong | Dining | 2015": "香港 | 餐飲 | 2015",
+        "The lighting design dissolves the boundary between interior and exterior, using accent lighting, dynamic sky imagery, custom decorative luminaires, RGBW effects and intelligent dimming control.": "燈光設計模糊室內與室外的界線，透過重點照明、動態天空影像、訂製裝飾燈具、RGBW 效果及智能調光控制，營造流動的空間體驗。",
+        "Ambient, accent and indirect lighting create a refined multifunctional venue, with cove lighting, adjustable track lighting and integrated dimming scenes for banquets and celebrations.": "環境光、重點光及間接照明共同塑造精緻的多功能場地，配合燈槽、可調校路軌燈及整合調光場景，支援宴會與慶典需要。",
+        "A warm and serene residential lighting concept using indirect light, integrated luminaires, landscape accents and decorative lanterns to balance architecture, nature and emotion.": "以溫暖寧靜為核心的住宅燈光概念，透過間接光、整合燈具、景觀重點照明及裝飾燈籠，平衡建築、自然與情感。",
+        "Integrated indirect linear lighting expresses the identity of a large-scale headquarters, revealing facade details while balancing site safety, guidance and environmental integration.": "整合式間接線性照明呈現大型總部建築的身份，揭示外立面細節，同時兼顧場地安全、導向及環境融合。",
+        "Functional and decorative lighting support commercial spaces, residential use, outdoor sports venues and driving roads, combining floodlights, light poles, linear strips and in-ground uplights.": "功能性與裝飾性燈光支援商業空間、住宅用途、戶外運動場及行車道路，結合泛光燈、燈柱、線性燈帶及地埋上照燈。",
+        "A delicate dialogue between architecture, landscape and nature, softly accentuating roof geometry, columns, materiality, flowering trees and pathway guidance.": "在建築、景觀與自然之間建立細膩對話，柔和地突顯屋頂幾何、柱列、材質、花樹及路徑導向。",
+        "Layered indirect cove lighting, accent downlights, wall washers, wall lamps, candlelight and table lamps create a romantic fine dining atmosphere with adaptable dimming scenes.": "層次化間接燈槽、重點筒燈、洗牆燈、壁燈、燭光及檯燈，共同營造浪漫高級餐飲氛圍，並配合可調光場景。",
+        "A relaxed mood and high-end lighting strategy using efficient ceiling lights, custom pendant lighting and a water ripple projector to create a wave-like dining atmosphere.": "以輕鬆氛圍與高端燈光策略為方向，運用高效天花燈、訂製吊燈及水波投影，塑造如波光般的用餐氣氛。",
+        "A continuation of the clubhouse lighting language, shaping intimate leisure, dining and social areas with warm layers, accent lighting and carefully integrated decorative moments.": "延續會所燈光語言，以溫暖層次、重點照明及細緻整合的裝飾光，塑造親密的休閒、餐飲及社交空間。",
+        "The lighting design creates a simple yet contemporary ambience, using soft spherical glow, corridor highlights and indirect cove lighting to enhance the architectural ceiling and guest experience.": "燈光設計營造簡潔而當代的氛圍，透過柔和球形光、走廊重點照明及間接燈槽，強化建築天花及賓客體驗。",
+        "Warm lighting, dimmable high-power spotlights and intimate table lamp moments create a relaxed home-like atmosphere around the void, artwork and leisure areas.": "溫暖燈光、可調高功率射燈及親密的檯燈場景，圍繞中庭、藝術品及休閒區塑造如家般放鬆的氛圍。",
+        "Linear light strips, recessed fixtures and square walkway lights form a concise and elegant strategy where light is visible without exposing the presence of fixtures.": "線性燈帶、嵌入式燈具及方形走廊燈形成簡潔優雅的策略，讓光可被感知，而燈具本身則低調隱藏。",
+        "Light strips and recessed ceiling lights create a comfortable dining atmosphere, enhancing architectural details with concealed mirrored-finish light shields.": "燈帶與嵌入式天花燈營造舒適用餐氛圍，並以隱藏式鏡面燈罩強化建築細節。",
+        "Get In Touch": "聯絡我們",
+        "Start a lighting design conversation.": "展開一場關於光的設計對話。",
+        "Available for architectural exterior lighting, hospitality environments, luxury residences, landscape lighting and mixed-use developments.": "我們可為建築外立面、酒店空間、豪宅、景觀燈光及綜合發展項目提供燈光設計顧問服務。",
+        "Copyright 2026 RADA ROUGE Lighting Design Consultant": "版權所有 2026 RADA ROUGE 燈光設計顧問",
+        "Light the way with heart and hue": "以心與色彩照亮前路"
+      }
+    };
+
+    const translatableSelector = '.brand span, .nav-links a, .hero h1, .button, .kicker, .section-title, .section-copy, .statement strong, .statement p, .principle h3, .principle p, .founder-panel h2, .founder-panel p, .credential, .service h3, .service p, .listing h3, .listing p, .project-card h3, .project-card p, .contact h2, .contact-card p, .footer span';
+    const languageButtons = Array.from(document.querySelectorAll('.language-switch button'));
+
+    function registerTranslatableText() {
+      document.querySelectorAll(translatableSelector).forEach((element) => {
+        const key = element.textContent.trim();
+        if (translations.zh[key]) {
+          element.dataset.i18n = key;
+        }
+      });
+    }
+
+    function applyLanguage(language) {
+      const isChinese = language === 'zh';
+      document.documentElement.lang = isChinese ? 'zh-Hant' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.dataset.i18n;
+        element.textContent = isChinese ? translations.zh[key] : key;
+      });
+      languageButtons.forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.lang === language);
+      });
+      localStorage.setItem('rada-language', language);
+    }
+
+    registerTranslatableText();
+    languageButtons.forEach((button) => {
+      button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+    });
+    applyLanguage(localStorage.getItem('rada-language') || 'en');
+
+    const modal = document.querySelector('#project-gallery-modal');
+    const galleryImage = document.querySelector('#gallery-image');
+    const galleryTitle = document.querySelector('#gallery-title');
+    const galleryMeta = document.querySelector('#gallery-meta');
+    const galleryCaption = document.querySelector('#gallery-caption');
+    const galleryCounter = document.querySelector('#gallery-counter');
+    const closeGallery = document.querySelector('.gallery-close');
+    const prevGallery = document.querySelector('.gallery-prev');
+    const nextGallery = document.querySelector('.gallery-next');
+    let activeImages = [];
+    let activeIndex = 0;
+    let activeCard = null;
+
+    function showGalleryImage(index) {
+      if (!activeImages.length) return;
+      activeIndex = (index + activeImages.length) % activeImages.length;
+      const title = activeCard.querySelector('h3').textContent.trim();
+      galleryImage.src = activeImages[activeIndex];
+      galleryImage.alt = title + ' project image ' + (activeIndex + 1);
+      galleryCounter.textContent = (activeIndex + 1) + ' / ' + activeImages.length;
+      galleryCaption.textContent = activeCard.querySelector('.project-card-body p:last-child').textContent.trim();
+    }
+
+    function openGallery(card) {
+      activeCard = card;
+      activeImages = card.dataset.gallery.split('|').filter(Boolean);
+      galleryTitle.textContent = card.querySelector('h3').textContent.trim();
+      galleryMeta.textContent = card.querySelector('.project-meta').textContent.trim();
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      showGalleryImage(0);
+      closeGallery.focus();
+    }
+
+    function hideGallery() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      galleryImage.src = '';
+      if (activeCard) activeCard.focus();
+    }
+
+    document.querySelectorAll('.project-card[data-gallery]').forEach((card) => {
+      card.addEventListener('click', () => openGallery(card));
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openGallery(card);
+        }
+      });
+    });
+
+    closeGallery.addEventListener('click', hideGallery);
+    prevGallery.addEventListener('click', () => showGalleryImage(activeIndex - 1));
+    nextGallery.addEventListener('click', () => showGalleryImage(activeIndex + 1));
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) hideGallery();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (!modal.classList.contains('is-open')) return;
+      if (event.key === 'Escape') hideGallery();
+      if (event.key === 'ArrowLeft') showGalleryImage(activeIndex - 1);
+      if (event.key === 'ArrowRight') showGalleryImage(activeIndex + 1);
+    });
+
+
+    const pageSections = Array.from(document.querySelectorAll('main > section[id]'));
+    const sectionIds = pageSections.map((section) => section.id);
+    const navAnchors = Array.from(document.querySelectorAll('.brand, .nav-links a'));
+
+    function showSectionFromHash() {
+      const requested = window.location.hash.replace('#', '') || 'welcome';
+      const activeId = sectionIds.includes(requested) ? requested : 'welcome';
+      pageSections.forEach((section) => {
+        section.hidden = section.id !== activeId;
+      });
+      navAnchors.forEach((anchor) => {
+        const id = anchor.getAttribute('href')?.replace('#', '');
+        anchor.classList.toggle('is-active', id === activeId);
+      });
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+
+    window.addEventListener('hashchange', showSectionFromHash);
+    showSectionFromHash();
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
