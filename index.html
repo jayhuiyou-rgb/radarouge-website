@@ -416,11 +416,13 @@
       display: grid;
       grid-template-columns: minmax(220px, 0.3fr) minmax(0, 0.7fr);
       gap: 34px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .founder-photo {
-      min-height: 500px;
+      width: min(100%, 360px);
+      aspect-ratio: 3 / 4;
+      justify-self: center;
       border: 1px solid var(--line);
       overflow: hidden;
       background: var(--panel);
@@ -851,7 +853,7 @@
       }
 
       .founder-photo {
-        min-height: 460px;
+        width: min(100%, 360px);
       }
 
       .principles,
@@ -1002,12 +1004,11 @@
 
       .founder-photo {
         min-height: 0;
-        aspect-ratio: auto;
-        overflow: visible;
+        aspect-ratio: 3 / 4;
       }
 
       .founder-photo img {
-        height: auto;
+        height: 100%;
         object-fit: contain;
         background: var(--panel);
       }
