@@ -423,16 +423,19 @@
       width: min(100%, 360px);
       aspect-ratio: 3 / 4;
       justify-self: center;
+      margin-top: 96px;
       border: 1px solid var(--line);
       overflow: hidden;
       background: var(--panel);
     }
 
     .founder-photo img {
-      object-fit: contain;
+      object-fit: cover;
       object-position: center top;
       filter: contrast(1.02);
       background: var(--panel);
+      transform: scale(1.14);
+      transform-origin: center top;
     }
 
     .founder-panel {
@@ -854,6 +857,7 @@
 
       .founder-photo {
         width: min(100%, 360px);
+        margin-top: 0;
       }
 
       .principles,
@@ -917,7 +921,7 @@
       }
 
       .founder-photo img {
-        object-fit: contain;
+        object-fit: cover;
         background: var(--panel);
       }
 
@@ -1009,7 +1013,7 @@
 
       .founder-photo img {
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         background: var(--panel);
       }
 
