@@ -85,7 +85,7 @@
 
     .brand span {
       color: var(--muted);
-      font-size: 0.7rem;
+      font-size: 0.76rem;
     }
 
     .nav-links {
@@ -382,6 +382,30 @@
       font-size: 0.95rem;
     }
 
+
+    .service-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .service {
+      min-height: 132px;
+      grid-template-columns: 46px minmax(0, 1fr);
+      align-content: center;
+      align-items: start;
+      gap: 18px;
+      padding: 22px 24px;
+    }
+
+    .service h3 {
+      font-size: 1.35rem;
+    }
+
+    .service p {
+      margin-top: 8px;
+    }
     .founder {
       background:
         linear-gradient(90deg, rgba(8, 7, 6, 0.97), rgba(8, 7, 6, 0.64)),
@@ -984,7 +1008,9 @@
         height: auto;
         object-fit: contain;
         background: var(--panel);
-      }      .whatsapp-float {
+      }
+
+      .whatsapp-float {
         right: 12px;
         bottom: 12px;
         left: 12px;
@@ -993,7 +1019,7 @@
 
       .whatsapp-float a {
         min-width: 0;
-        min-height: 40px;
+        min-height: 44px;
         padding: 8px 10px;
         font-size: 0.66rem;
         text-align: center;
@@ -1208,15 +1234,14 @@
         <div class="project-gallery">
           <article class="project-card" tabindex="0" role="button" aria-label="Open XAVA Restaurants gallery" data-gallery="assets/project-xava.jpg|assets/project-xava-2.jpg"><div class="project-card-image"><img src="assets/project-xava.jpg" alt="XAVA Restaurants lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Restaurants | 2026</p><h3>XAVA Restaurants</h3><p>The lighting design dissolves the boundary between interior and exterior, using accent lighting, dynamic sky imagery, custom decorative luminaires, RGBW effects and intelligent dimming control.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open Wyndham Hotel Ballroom gallery" data-gallery="assets/project-wyndham.jpg|assets/project-wyndham-2.jpg"><div class="project-card-image"><img src="assets/project-wyndham.jpg" alt="Wyndham Hotel ballroom lighting design"></div><div class="project-card-body"><p class="project-meta">Singapore | Ballroom | 2026</p><h3>Wyndham Hotel Ballroom</h3><p>Ambient, accent and indirect lighting create a refined multifunctional venue, with cove lighting, adjustable track lighting and integrated dimming scenes for banquets and celebrations.</p></div></article>
-          <article class="project-card" tabindex="0" role="button" aria-label="Open EDEN TAMAN DUTA gallery" data-gallery="assets/project-eden.jpg|assets/project-eden-4.jpg|assets/project-eden-5.jpg|assets/project-eden-2.jpg|assets/project-eden-3.jpg"><div class="project-card-image"><img src="assets/project-eden.jpg" alt="EDEN TAMAN DUTA residential lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Residential | 2026</p><h3>EDEN TAMAN DUTA</h3><p>A warm and serene residential lighting concept using indirect light, integrated luminaires, landscape accents and decorative lanterns to balance architecture, nature and emotion.</p></div></article>
+          <article class="project-card" tabindex="0" role="button" aria-label="Open EDEN TAMAN DUTA gallery" data-gallery="assets/project-eden.jpg|assets/project-eden-2.jpg|assets/project-eden-3.jpg"><div class="project-card-image"><img src="assets/project-eden.jpg" alt="EDEN TAMAN DUTA residential lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Residential | 2026</p><h3>EDEN TAMAN DUTA</h3><p>A warm and serene residential lighting concept using indirect light, integrated luminaires, landscape accents and decorative lanterns to balance architecture, nature and emotion.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open PGTC Petronas Facade gallery" data-gallery="assets/project-pgtc.jpg|assets/project-pgtc-2.jpg"><div class="project-card-image"><img src="assets/project-pgtc.jpg" alt="PGTC Petronas facade lighting design"></div><div class="project-card-body"><p class="project-meta">Malaysia | Facade | 2026</p><h3>PGTC Petronas Facade</h3><p>Integrated indirect linear lighting expresses the identity of a large-scale headquarters, revealing facade details while balancing site safety, guidance and environmental integration.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open SSC Go Park Sports gallery" data-gallery="assets/project-ssc-go-park.jpg|assets/project-ssc-go-park-2.jpg|assets/project-ssc-go-park-3.jpg|assets/project-ssc-go-park-4.jpg|assets/project-ssc-go-park-5.jpg|assets/project-ssc-go-park-6.jpg|assets/project-ssc-go-park-7.jpg|assets/project-ssc-go-park-8.jpg|assets/project-ssc-go-park-9.jpg|assets/project-ssc-go-park-10.jpg"><div class="project-card-image"><img src="assets/project-ssc-go-park.jpg" alt="SSC Go Park Sports lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Sports & Mixed-use | 2025</p><h3>SSC Go Park Sports</h3><p>Functional and decorative lighting support commercial spaces, residential use, outdoor sports venues and driving roads, combining floodlights, light poles, linear strips and in-ground uplights.</p></div></article>
-          <article class="project-card" tabindex="0" role="button" aria-label="Open Discovery Valley Park gallery" data-gallery="assets/project-discovery.jpg"><div class="project-card-image"><img src="assets/project-discovery.jpg" alt="Discovery Valley Park lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Landscape | 2025</p><h3>Discovery Valley Park</h3><p>A delicate dialogue between architecture, landscape and nature, softly accentuating roof geometry, columns, materiality, flowering trees and pathway guidance.</p></div></article>
-          <article class="project-card" tabindex="0" role="button" aria-label="Open Sabatini IFC gallery" data-gallery="assets/project-sabatini.jpg|assets/project-sabatini-2.jpg|assets/project-sabatini-3.jpg|assets/project-sabatini-4.jpg|assets/project-sabatini-5.jpg|assets/project-sabatini-6.jpg|assets/project-sabatini-7.jpg|assets/project-sabatini-8.jpg"><div class="project-card-image"><img src="assets/project-sabatini.jpg" alt="Sabatini restaurant lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Restaurant | 2024</p><h3>Sabatini IFC</h3><p>Layered indirect cove lighting, accent downlights, wall washers, wall lamps, candlelight and table lamps create a romantic fine dining atmosphere with adaptable dimming scenes.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open SKY Lounge Bar gallery" data-gallery="assets/project-sky-lounge.jpg|assets/project-sky-lounge-2.jpg|assets/project-sky-lounge-3.jpg|assets/project-sky-lounge-4.jpg|assets/project-sky-lounge-5.jpg|assets/project-sky-lounge-6.jpg"><div class="project-card-image"><img src="assets/project-sky-lounge.jpg" alt="SKY Lounge Bar lighting design"></div><div class="project-card-body"><p class="project-meta">Shenzhen | Lounge Bar | 2024</p><h3>SKY Lounge Bar</h3><p>A relaxed mood and high-end lighting strategy using efficient ceiling lights, custom pendant lighting and a water ripple projector to create a wave-like dining atmosphere.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open V Walk Clubhouse 2 gallery" data-gallery="assets/project-vwalk-clubhouse-2.jpg|assets/project-vwalk-clubhouse-2-2.jpg|assets/project-vwalk-clubhouse-2-3.jpg|assets/project-vwalk-clubhouse-2-4.jpg|assets/project-vwalk-clubhouse-2-5.jpg|assets/project-vwalk-clubhouse-2-6.jpg|assets/project-vwalk-clubhouse-2-7.jpg|assets/project-vwalk-clubhouse-2-8.jpg"><div class="project-card-image"><img src="assets/project-vwalk-clubhouse-2.jpg" alt="V Walk Clubhouse 2 lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse 2</h3><p>A continuation of the clubhouse lighting language, shaping intimate leisure, dining and social areas with warm layers, accent lighting and carefully integrated decorative moments.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open Andaz Hotel gallery" data-gallery="assets/project-andaz-hotel.jpg|assets/project-andaz-hotel-2.jpg"><div class="project-card-image"><img src="assets/project-andaz-hotel.jpg" alt="Andaz Hotel lighting design"></div><div class="project-card-body"><p class="project-meta">Taiwan | Hotel | 2024</p><h3>Andaz Hotel</h3><p>The lighting design creates a simple yet contemporary ambience, using soft spherical glow, corridor highlights and indirect cove lighting to enhance the architectural ceiling and guest experience.</p></div></article>
-          <article class="project-card" tabindex="0" role="button" aria-label="Open V Walk Clubhouse gallery" data-gallery="assets/project-vwalk.jpg|assets/project-vwalk-2.jpg|assets/project-vwalk-3.jpg|assets/project-vwalk-4.jpg|assets/project-vwalk-5.jpg|assets/project-vwalk-6.jpg"><div class="project-card-image"><img src="assets/project-vwalk.jpg" alt="V Walk Clubhouse lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse</h3><p>Warm lighting, dimmable high-power spotlights and intimate table lamp moments create a relaxed home-like atmosphere around the void, artwork and leisure areas.</p></div></article>
+                    <article class="project-card" tabindex="0" role="button" aria-label="Open Artyzen Club gallery" data-gallery="assets/project-artyzen-club.jpg|assets/project-artyzen-club-2.jpg|assets/project-artyzen-club-3.jpg|assets/project-artyzen-club-4.jpg|assets/project-artyzen-club-5.jpg|assets/project-artyzen-club-6.jpg|assets/project-artyzen-club-7.jpg|assets/project-artyzen-club-8.jpg"><div class="project-card-image"><img src="assets/project-artyzen-club.jpg" alt="Artyzen Club lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Club | 2024</p><h3>Artyzen Club</h3><p>A warm and refined lighting approach blending classical and modern aesthetics, with soft ambient glow, corridor highlights and indirect cove lighting to enhance the architectural ceiling and guest experience.</p></div></article>
+<article class="project-card" tabindex="0" role="button" aria-label="Open V Walk Clubhouse gallery" data-gallery="assets/project-vwalk.jpg|assets/project-vwalk-2.jpg|assets/project-vwalk-3.jpg|assets/project-vwalk-4.jpg|assets/project-vwalk-5.jpg|assets/project-vwalk-6.jpg"><div class="project-card-image"><img src="assets/project-vwalk.jpg" alt="V Walk Clubhouse lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Clubhouse | 2019</p><h3>V Walk Clubhouse</h3><p>Warm lighting, dimmable high-power spotlights and intimate table lamp moments create a relaxed home-like atmosphere around the void, artwork and leisure areas.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open Deep Water Bay No.8 gallery" data-gallery="assets/project-deep-water-bay.jpg|assets/project-deep-water-bay-2.jpg|assets/project-deep-water-bay-3.jpg|assets/project-deep-water-bay-4.jpg"><div class="project-card-image"><img src="assets/project-deep-water-bay.jpg" alt="Deep Water Bay No.8 lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Residential | 2016</p><h3>Deep Water Bay No.8</h3><p>Linear light strips, recessed fixtures and square walkway lights form a concise and elegant strategy where light is visible without exposing the presence of fixtures.</p></div></article>
           <article class="project-card" tabindex="0" role="button" aria-label="Open Cheung Kung Koon gallery" data-gallery="assets/project-cheung-kung-koon.jpg|assets/project-cheung-kung-koon-2.jpg"><div class="project-card-image"><img src="assets/project-cheung-kung-koon.jpg" alt="Cheung Kung Koon lighting design"></div><div class="project-card-body"><p class="project-meta">Hong Kong | Dining | 2015</p><h3>Cheung Kung Koon</h3><p>Light strips and recessed ceiling lights create a comfortable dining atmosphere, enhancing architectural details with concealed mirrored-finish light shields.</p></div></article>
         </div>
@@ -1352,6 +1377,9 @@
         "Shenzhen | Lounge Bar | 2024": "深圳 | 酒廊 | 2024",
         "Hong Kong | Clubhouse | 2019": "香港 | 會所 | 2019",
         "Taiwan | Hotel | 2024": "台灣 | 酒店 | 2024",
+        "Hong Kong | Club | 2024": "香港 | 會所 | 2024",
+        "Artyzen Club": "Artyzen Club",
+        "A warm and refined lighting approach blending classical and modern aesthetics, with soft ambient glow, corridor highlights and indirect cove lighting to enhance the architectural ceiling and guest experience.": "以溫暖而精緻的燈光方式融合古典與現代美學，透過柔和環境光、走廊重點照明及間接燈槽，強化建築天花與賓客體驗。",
         "Hong Kong | Residential | 2016": "香港 | 住宅 | 2016",
         "Hong Kong | Dining | 2015": "香港 | 餐飲 | 2015",
         "The lighting design dissolves the boundary between interior and exterior, using accent lighting, dynamic sky imagery, custom decorative luminaires, RGBW effects and intelligent dimming control.": "燈光設計模糊室內與室外的界線，透過重點照明、動態天空影像、訂製裝飾燈具、RGBW 效果及智能調光控制，營造流動的空間體驗。",
@@ -1497,6 +1525,12 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
