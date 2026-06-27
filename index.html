@@ -7,17 +7,17 @@
   <meta name="description" content="RADA ROUGE is an architectural lighting design consultancy shaping hospitality, residential, commercial, facade and landscape environments through light and shadow.">
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #080706;
-      --ink: #f6f0e8;
-      --muted: #b8afa4;
-      --quiet: rgba(246, 240, 232, 0.68);
-      --line: rgba(246, 240, 232, 0.16);
-      --panel: #12100e;
-      --panel-2: #191511;
+      color-scheme: light;
+      --bg: #f8f1e6;
+      --ink: #16120d;
+      --muted: #5d5347;
+      --quiet: rgba(22, 18, 13, 0.68);
+      --line: rgba(22, 18, 13, 0.16);
+      --panel: rgba(255, 252, 246, 0.76);
+      --panel-2: rgba(246, 235, 219, 0.76);
       --rouge: #8d2f2b;
-      --gold: #d6b16e;
-      --stone: #d8d0c4;
+      --gold: #8a6530;
+      --stone: #332b21;
       --max: 1180px;
     }
 
@@ -31,7 +31,12 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.66), transparent 28%),
+        radial-gradient(circle at 82% 12%, rgba(199, 165, 113, 0.1), transparent 24%),
+        linear-gradient(135deg, rgba(138, 101, 48, 0.038) 0 1px, transparent 1px 34px),
+        linear-gradient(45deg, rgba(138, 101, 48, 0.03) 0 1px, transparent 1px 38px),
+        var(--bg);
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.55;
@@ -53,8 +58,8 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 20;
-      border-bottom: 1px solid rgba(246, 240, 232, 0.12);
-      background: rgba(8, 7, 6, 0.82);
+      border-bottom: 1px solid rgba(22, 18, 13, 0.12);
+      background: rgba(248, 241, 230, 0.88);
       backdrop-filter: blur(18px);
     }
 
@@ -123,9 +128,9 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      border: 1px solid rgba(246, 240, 232, 0.18);
+      border: 1px solid rgba(22, 18, 13, 0.18);
       padding: 3px;
-      background: rgba(18, 16, 14, 0.72);
+      background: rgba(255, 252, 246, 0.76);
     }
 
     .language-switch button {
@@ -154,10 +159,7 @@
       align-items: end;
       overflow: hidden;
       isolation: isolate;
-      background:
-        linear-gradient(180deg, rgba(8, 7, 6, 0.2), rgba(8, 7, 6, 0.9)),
-        linear-gradient(90deg, rgba(8, 7, 6, 0.96), rgba(8, 7, 6, 0.36), rgba(8, 7, 6, 0.78)),
-        url("assets/hero.jpg") center / cover;
+      background: var(--bg);
     }
 
     .hero::after {
@@ -202,7 +204,7 @@
 
     .hero-copy {
       max-width: 670px;
-      color: #e7ded2;
+      color: var(--muted);
       font-size: clamp(1.04rem, 1.8vw, 1.28rem);
     }
 
@@ -220,7 +222,7 @@
       border: 1px solid var(--line);
       padding: 12px 18px;
       color: var(--ink);
-      background: rgba(246, 240, 232, 0.08);
+      background: rgba(22, 18, 13, 0.06);
       font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.11em;
@@ -240,7 +242,7 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       border: 1px solid var(--line);
-      background: rgba(18, 16, 14, 0.96);
+      background: rgba(255, 252, 246, 0.74);
     }
 
     .proof {
@@ -311,9 +313,7 @@
 
     .about-image {
       min-height: 500px;
-      background:
-        linear-gradient(180deg, transparent, rgba(8, 7, 6, 0.5)),
-        url("assets/about.jpg") center / cover;
+      background: url("assets/about.jpg") center / cover;
       border: 1px solid var(--line);
     }
 
@@ -407,9 +407,7 @@
       margin-top: 8px;
     }
     .founder {
-      background:
-        linear-gradient(90deg, rgba(8, 7, 6, 0.97), rgba(8, 7, 6, 0.64)),
-        url("assets/project-discovery.jpg") center / cover;
+      background: var(--bg);
     }
 
     .founder-layout {
@@ -440,7 +438,7 @@
 
     .founder-panel {
       padding: 40px;
-      background: rgba(18, 16, 14, 0.82);
+      background: rgba(255, 252, 246, 0.74);
       border: 1px solid var(--line);
     }
 
@@ -502,8 +500,8 @@
       right: 16px;
       top: 16px;
       padding: 8px 10px;
-      border: 1px solid rgba(246, 240, 232, 0.28);
-      background: rgba(8, 7, 6, 0.78);
+      border: 1px solid rgba(22, 18, 13, 0.22);
+      background: rgba(255, 252, 246, 0.76);
       color: var(--ink);
       font-size: 0.72rem;
       font-weight: 700;
@@ -725,7 +723,7 @@
       display: grid;
       gap: 12px;
       padding: 28px;
-      background: rgba(18, 16, 14, 0.95);
+      background: rgba(255, 252, 246, 0.76);
     }
 
     .listing span {
@@ -788,8 +786,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(246, 240, 232, 0.22);
-      background: rgba(18, 16, 14, 0.92);
+      border: 1px solid rgba(22, 18, 13, 0.22);
+      background: rgba(255, 252, 246, 0.86);
       color: var(--ink);
       font-size: 0.76rem;
       font-weight: 700;
@@ -801,7 +799,7 @@
 
     .whatsapp-float a:hover {
       border-color: rgba(214, 177, 110, 0.78);
-      background: rgba(35, 29, 22, 0.96);
+      background: rgba(239, 226, 207, 0.92);
     }
     .footer {
       width: min(var(--max), calc(100% - 36px));
@@ -810,7 +808,7 @@
       display: flex;
       justify-content: space-between;
       gap: 18px;
-      color: rgba(246, 240, 232, 0.56);
+      color: rgba(22, 18, 13, 0.56);
       font-size: 0.78rem;
     }
 
